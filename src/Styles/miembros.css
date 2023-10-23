@@ -1,0 +1,24 @@
+/* Miembros.css */
+.tablaMiembros {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 10px;
+  }
+  
+  .tablaMiembros th, .tablaMiembros td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tablaMiembros th {
+    background-color: #f2f2f2;
+  }
+  
+  .tablaMiembros tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+
+
+  
