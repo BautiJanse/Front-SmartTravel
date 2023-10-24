@@ -11,7 +11,7 @@ export const Home = () => {
   return (
 
     <div>
-           <div>
+        <div>
       <header className="header">
         <a to="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
         <a href="/" className="viaje">VIAJE</a>
