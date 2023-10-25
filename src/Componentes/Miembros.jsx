@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import '../Styles/miembros.css'
 import { NavLink } from 'react-router-dom';
+import './../Styles/miembros.css';
+
 
 
 

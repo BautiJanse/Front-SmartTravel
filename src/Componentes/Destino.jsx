@@ -1,4 +1,4 @@
-import '../Styles/destino.css'
+import './../Styles/destino.css';
 
 
 export const Destino = () => {
@@ -10,18 +10,18 @@ export const Destino = () => {
     <div>
     
 
-      <header class="header">
+      <header class="header-destinos">
           <a href="/" class="go-back"><i class='bx bx-chevron-left'></i></a>
           <a href="/" class="destinos">Destinos</a>
           <a href="/" class="icon">ll</a>
       </header>
 
       <section>
-        <div class="form1">
+        <div class="form1-destinos">
         <label for="destino">Ingresar Destino</label>
         <input type="text" id="destino" name="destino" placeholder="Nuevo destino..."/>
     </div>
-        <div class="form2">
+        <div class="form2-destinos">
         <label for="fechas" >Ingresar Fechas</label>
         <input type="text" id="fechas" name="fechas" placeholder="Ingrese fechas..."/>
     </div>

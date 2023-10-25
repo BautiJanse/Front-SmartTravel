@@ -1,6 +1,7 @@
 import { NavLink, Route, Routes } from "react-router-dom"
 import React from "react"
-import '../Styles/home.css'
+import './../Styles/home.css';
+
 
 export const Home = () => {
 
@@ -12,39 +13,40 @@ export const Home = () => {
 
     <div>
         <div>
-      <header className="header">
+      <header className="header-home">
         <a to="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
         <a href="/" className="viaje">VIAJE</a>
         <a href="/" className="icon">ll</a>
       </header>
 
-      <section className="resumen" id="section-a">
+
+      <section className="resumen-home" id="section-a">
         <div className="contain">
           <h1>Resumen</h1>
           <p>Destino: La Montaña <br />Fechas: Ida/Mes - Fin/Mes <br />Nro Integrantes: 5</p>
         </div>
       </section>
 
-      <section className="content" id="section-b">
-        <div className="wrapper">
-          <NavLink to="/Destino" className="box">
+      <section className="content-home" id="section-b">
+        <div className="wrapper-home">
+          <NavLink to="/Destino" className="box-home">
             <p>Destino</p>
           </NavLink>
 
-          <NavLink to="/Documentos" className="box">
+          <NavLink to="/Documentos" className="box-home">
             <p>Documentos</p>
           </NavLink>
 
-          <NavLink to="/Miembros" className="box">
+          <NavLink to="/Miembros" className="box-home">
             <p>Miembros</p>
           </NavLink>
 
-          <NavLink to="/Actividades" className="box">
+          <NavLink to="/Actividades" className="box-home">
             <p>Actividades</p>
           </NavLink>
         </div>
 
-        <NavLink to="/Gastos" className="gastos">
+        <NavLink to="/Gastos" className="gastos-home">
           <p>Gastos</p>
         </NavLink>
       </section>
