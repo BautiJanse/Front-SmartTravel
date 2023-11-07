@@ -1,32 +1,42 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom';
+
 
 export const AgregarMiembro = () => {
 
-    const [miembro, setmiembro] = useState('')
+    const [nombre, setNombre] = useState('');
+    const [email, setEmail] = useState('');
+    const [usuarios, setUsuarios] = useState([]);
 
- 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const nuevoUsuario = { nombre, email };
+        setUsuarios([...usuarios, nuevoUsuario]);
+        setNombre('');
+        setEmail('');
+        console.log('Usuarios:', usuarios)
+        console.log('Nombres:', nombre)
+        console.log('mail:', email)
 
-    const handleChange = (event) =>{
-        setmiembro(event.target.value)
-
-    }
-
-    const onSubmit = (event) =>{
-        event.preventDefault()
-        console.log(miembro)
-
-    }
-
-
+      };
+    
   return (
     <div>
         <h3>Agregar Miembro</h3>
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
 
-            <input type="text" placeholder="Ingresa el nombre" value={miembro} onClick={handleChange}/>
+            <input type="text" placeholder="Ingresa el nombre" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
+
+            <input type="text" placeholder="Ingresa el mail"  value={email} onChange={(e) => setEmail(e.target.value)}/>
+
+            <button type="submit">Agregar Usuario</button>
 
         </form>
+
+        <Link to="/Miembros">
+            <button>Volver</button>
+        </Link>
 
         
     </div>

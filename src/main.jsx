@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       
       <TravelApp />
 
-    </React.StrictMode>,
+    </React.StrictMode>
   </BrowserRouter>
 
 )

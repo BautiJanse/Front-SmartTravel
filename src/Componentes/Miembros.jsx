@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './../Styles/miembros.css';
 
 
@@ -62,9 +62,14 @@ const eliminar = (id) =>{
       </div>
       
 
-      <div className="boton-agregar">
-        <NavLink to= "/AgregarMiembro">Agregar</NavLink>
-      </div>
+      <Link to="/AgregarMiembro">
+            <button>Agregar Miembro</button>
+      </Link>
+
+      <Link to="/">
+            <button>Volver</button>
+      </Link>
+
 
     
     </div>
