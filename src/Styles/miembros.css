@@ -1,24 +1,104 @@
-/* Miembros.css */
 .tablaMiembros {
     width: 100%;
     border-collapse: collapse;
     padding: 10px;
   }
-  
+
   .tablaMiembros th, .tablaMiembros td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
   }
-  
+
   .tablaMiembros th {
     background-color: #f2f2f2;
   }
-  
+
   .tablaMiembros tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
   
 
+.header-miembros{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
 
-  
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding:25px 15px;
+    font-weight: bold;
+}
+
+.header-miembros a{
+    text-decoration: none;
+    color:black;
+    font-size:27px;
+}
+
+.lista-miembros h1{
+    margin-top:116px;
+    margin-left:46px;
+
+    font-weight: bold;
+}
+
+.title-miembros{
+  color:gray;
+  font-size:15px;
+}
+
+.member-miembros{
+  margin-left:20px;
+}
+
+.container-miembros {
+    display: flex;
+
+    align-items: center;
+    margin-top:19px;
+    width:323px;
+    height:29px;
+    margin-left:46px;
+    font-size: 17px;
+  }
+  .user-icon-miembros{
+    font-size:30px;
+}
+
+.member-miembros{
+    margin-right:110px;
+}
+
+.miembros-miembros h2{
+    margin-top:51px;
+    margin-bottom: 26px;
+    margin-left:46px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.add-miembro{
+  margin-top:30px;
+  margin-left:28px;
+  border-radius: 20px;
+  background-color: #D0CBFF;
+  background-size:cover;
+  background-position:center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height:49px;
+  width: 90%;
+  font-size:15px;
+  font-weight: bold;
+  margin-top:50px;
+}
+
+.link-miembros {
+  text-decoration: none;
+  color: black;
+}

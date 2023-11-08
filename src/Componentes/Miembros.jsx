@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-import './../Styles/miembros.css';
 
 
 
@@ -20,8 +19,8 @@ const eliminar = (id) =>{
   return (
     <div>
       
-      <h1>Miembros</h1>
-
+    
+      
       <div className="fila">
 
         <table className="tablaMiembros">

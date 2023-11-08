@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Actividades = () => {
 
   const [actividades, setactividades] = useState([{id:1, descripcion:"Partido de Futbol", fecha:"19/11/2023", costo:"$ 500"}, 
- {id:2, descripcion:"Partido de Basket", fecha:"19/11/2023", costo:"$ 500"}]);
+ {id:2, descripcion:"Partido de Basket", fecha:"19/11/2023", costo:"$ 500"}, {id:5, descripcion:"Partido", fecha:"19/11/2023", costo:"$ 500"}]);
 
 const eliminar = (id) =>{
   const nuevos = actividades.filter(actividad=>actividad.id !== id);
