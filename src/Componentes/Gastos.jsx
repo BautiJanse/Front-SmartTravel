@@ -1,61 +1,72 @@
 import '../Styles/gastos.css'
+import { useState } from 'react'
+import { Link } from 'react-router-dom';
+
+
 
 export const Gastos = () => {
+
+  const [gastos, setGastos] = useState([{id:1, miembro:"Bautista", importe: 500}, 
+  {id:2, miembro:"Bautista", importe: 500}, {id:3, miembro:"Bautista", importe: 500}]);
+
+const eliminar = (id) =>{
+  const nuevos = gastos.filter(gasto=>gasto.id !== id);
+  setGastos(nuevos);
+}
+
+
+
   return (
     <div>
-    <header className="header-gastos">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/" className="miembros">Gastos</a>
-      <a href="/" className="icon">ll</a>
-    </header>
 
-    <section className="lista-gastos" id="section-a">
-      <h1>Lista de miembros</h1>
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-user-circle'></i></p>
-        <p className="member-gastos">Miembro 1</p>
-        <p>+ 10000$</p>
-      </div>
+      <h1>Gastos</h1>
 
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-user-circle'></i></p>
-        <p className="member-gastos">Miembro 2</p>
-        <p>- 2000$</p>
-      </div>
+      <div className="fila">
 
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-user-circle'></i></p>
-        <p className="member-gastos">Miembro 3</p>
-        <p>+ 1500$</p>
-      </div>
+<table className="tablaActividades">
 
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-user-circle'></i></p>
-        <p className="member-gastos">Miembro 4</p>
-        <p>- 3000$</p>
-      </div>
-    </section>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Importe</th>
+      <th>Actions</th>
 
-    <section className="gastos-gastos" id="section-b">
-      <h2>Lista de gastos</h2>
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-dollar-circle'></i></p>
-        <p className="member-gastos">Hotel</p>
-        <p>10000$</p>
-      </div>
 
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-dollar-circle'></i></p>
-        <p className="member-gastos">Pasajes Avion</p>
-        <p>2000$</p>
-      </div>
+    </tr>
+  </thead>
 
-      <div className="container-gastos">
-        <p className="user-icon-gastos"><i className='bx bx-dollar-circle'></i></p>
-        <p className="member-gastos">Auto</p>
-        <p>1500$</p>
-      </div>
-    </section>
-  </div>
+  <tbody>
+
+  {gastos.map(gasto => (
+    <tr key={gasto.id}>
+        <td>{gasto.id}</td>
+        <td>{gasto.miembro}</td>
+        <td>{gasto.importe}</td>
+      
+
+      <td>
+        <button onClick={() => eliminar(gasto.id)}>
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  ))}
+
+  </tbody>
+
+</table>
+
+</div>
+
+<Link to="/AgregarGasto">
+            <button>Agregar Gasto</button>
+      </Link>
+
+      <Link to="/Home">
+            <button>Volver</button>
+      </Link>
+    
+    </div>
   )
 }

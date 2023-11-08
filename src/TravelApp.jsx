@@ -8,6 +8,8 @@ import { Gastos } from "./Componentes/Gastos"
 import { AgregarMiembro } from "./Componentes/AgregarMiembro"
 import { AgregarActividad } from "./Componentes/AgregarActividad"
 import { Login } from "./Componentes/Login"
+import { AgregarGasto } from "./Componentes/AgregarGasto"
+
 
 
 
@@ -31,6 +33,8 @@ export const TravelApp = () => {
         <Route path="/Actividades" element={<Actividades></Actividades>}></Route>
         <Route path="/Gastos" element={<Gastos></Gastos>}></Route>
         <Route path="/AgregarActividad" element={<AgregarActividad></AgregarActividad>}></Route>
+        <Route path="/AgregarGasto" element={<AgregarGasto></AgregarGasto>}></Route>
+
 
         
       </Routes>
