@@ -25,6 +25,7 @@ export const AgregarDocumentos = () => {
     setTipoDocumento("");
     setTituloDocumento("");
     setDocumento(null);
+    //asd
 
     navigate("/Documentos")
   };
