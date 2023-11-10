@@ -60,7 +60,7 @@ const eliminar = (id) =>{
             <button>Agregar Actividad</button>
     </Link>
 
-    <Link to="/">
+    <Link to="/Home">
             <button>Volver</button>
     </Link>
 

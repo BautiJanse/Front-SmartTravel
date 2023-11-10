@@ -9,7 +9,7 @@ export const AgregarMiembro = () => {
     const [email, setEmail] = useState('');
     const [usuarios, setUsuarios] = useState([]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const nuevoUsuario = { nombre, email };
         setUsuarios([...usuarios, nuevoUsuario]);
@@ -18,6 +18,8 @@ export const AgregarMiembro = () => {
         console.log('Usuarios:', usuarios)
         console.log('Nombres:', nombre)
         console.log('mail:', email)
+
+        await axios.post("http://localhost:8080/user", usuarios);
 
       };
     
