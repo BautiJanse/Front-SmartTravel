@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const AgregarDocumentos = () => {
   const [tipoDocumento, setTipoDocumento] = useState("");
@@ -15,6 +15,12 @@ export const AgregarDocumentos = () => {
   };
 
   const guardarDocumento = () => {
+
+    if (!tituloDocumento || !tipoDocumento || !documento) {
+      alert("Por favor, completa todos los campos antes de guardar el documento.");
+      return;
+    }
+
     const nuevoDocumento = { tipoDocumento, tituloDocumento, documento };
     const nuevosDocumentos = [...documentosGuardados, nuevoDocumento];
 
@@ -46,7 +52,7 @@ export const AgregarDocumentos = () => {
           <option value="">Selecciona tipo de Documento</option>
           <option value="Transporte">Transporte</option>
           <option value="Alojamiento">Alojamiento</option>
-          <option value="Otro">Otro</option>
+          <option value="Otros">Otros</option>
         </select>
       </div>
       <div>
@@ -63,6 +69,11 @@ export const AgregarDocumentos = () => {
         )}
       </div>
       <button onClick={guardarDocumento}>Guardar Documento</button>
+      
+      <Link to="/Documentos">
+        <button>Volver</button>
+      </Link>
+
     </>
   );
 };
