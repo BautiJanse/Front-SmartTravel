@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom"
+
 
 
 export const Documentos = () => {
-  return (
-    <div>Documentos</div>
-  )
-}
+
+return (
+    <>
+    <h1>Hola</h1>
+    <Link to="/Documentos/AgregarDocumentos">
+        <button>Agregar Documento</button>
+    </Link>
+    </>
+);
+};

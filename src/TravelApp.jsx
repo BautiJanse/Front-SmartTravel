@@ -9,15 +9,10 @@ import { AgregarMiembro } from "./Componentes/AgregarMiembro"
 import { AgregarActividad } from "./Componentes/AgregarActividad"
 import { Login } from "./Componentes/Login"
 import { AgregarGasto } from "./Componentes/AgregarGasto"
-
-
-
-
+import { AgregarDocumentos } from "./Componentes/AgregarDocumentos"
 
 
 export const TravelApp = () => {
-
-
 
   return (
     <div>
@@ -34,9 +29,8 @@ export const TravelApp = () => {
         <Route path="/Gastos" element={<Gastos></Gastos>}></Route>
         <Route path="/AgregarActividad" element={<AgregarActividad></AgregarActividad>}></Route>
         <Route path="/AgregarGasto" element={<AgregarGasto></AgregarGasto>}></Route>
+        <Route path="/Documentos/AgregarDocumentos" element={<AgregarDocumentos></AgregarDocumentos>}></Route>
 
-
-        
       </Routes>
     </div>
   )
