@@ -11,9 +11,8 @@ export const Destino = () => {
     
 
       <header class="header-destinos">
-          <a href="/" class="go-back"><i class='bx bx-chevron-left'></i></a>
-          <a href="/" class="destinos">Destinos</a>
-          <a href="/" class="icon">ll</a>
+          <a href="/home" class="destinos">Destinos</a>
+          <a href="/home" class="icon">ll</a>
       </header>
 
       <section>

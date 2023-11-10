@@ -1,31 +1,45 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 
 export const Miembros = () => {
 
+    const [miembros, setMiembros] = useState([]);
 
+    // const eliminar = (id) =>{
+    //   const nuevos = miembros.filter(miembro=>miembro.id !== id);
+    //   setmiembros(nuevos);
+    // }
 
-    const [miembros, setmiembros] = useState([{id:1, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}, 
-    {id:2, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}]);
+    useEffect(() => {
+      // Realizar una solicitud al servidor para obtener los miembros cuando el componente se monta
+      obtenerMiembros();
+    }, []); // El segundo parámetro [] asegura que esta solicitud se realice solo una vez al montar el componente
+  
+    const obtenerMiembros = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/miembro');
+        setMiembros(response.data);
+        console.log('Miembros obtenidos correctamente:', response.data);
+      } catch (error) {
+        console.error('Error al obtener miembros:', error);
+      }
+    };
 
-    const eliminar = (id) =>{
-      const nuevos = miembros.filter(miembro=>miembro.id !== id);
-      setmiembros(nuevos);
-    }
-
-    useEffect(()=>{
-      mostrarMiembros();
-    }, []);
-
-    const mostrarMiembros = async ()=>{
-
-      const result = await axios.get(`http://localhost:8080/miembros`);
-      setmiembros=(result.data)
-
-    }
+    const handleEliminarMiembro = async (id) => {
+      console.log(id)
+      try {
+        await axios.delete("http://localhost:8080/miembro/${id}");
+        console.log('Miembro eliminado correctamente');
+        // Actualiza la lista de miembros después de eliminar uno
+        obtenerMiembros();
+      } catch (error) {
+        console.error('Error al eliminar miembro:', error);
+      }
+    };
 
   return (
     <div>
@@ -38,9 +52,7 @@ export const Miembros = () => {
 
           <thead>
             <tr>
-              <th>Id</th>
               <th>Nombre</th>
-              <th>Apellido</th>
               <th>Mail</th>
               <th>Actions</th>
 
@@ -52,13 +64,11 @@ export const Miembros = () => {
 
           {miembros.map(miembro => (
             <tr key={miembro.id}>
-              <td>{miembro.id}</td>
               <td>{miembro.nombre}</td>
-              <td>{miembro.apellido}</td>
-              <td>{miembro.mail}</td>
+              <td>{miembro.email}</td>
 
               <td>
-                <button onClick={() => eliminar(miembro.id)}>
+                <button onClick={() => handleEliminarMiembro(Number(miembro.id))}>
                   Eliminar
                 </button>
               </td>

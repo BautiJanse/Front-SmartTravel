@@ -15,11 +15,20 @@ export const AgregarMiembro = () => {
         setUsuarios([...usuarios, nuevoUsuario]);
         setNombre('');
         setEmail('');
-        console.log('Usuarios:', usuarios)
-        console.log('Nombres:', nombre)
-        console.log('mail:', email)
-
-        await axios.post("http://localhost:8080/user", usuarios);
+        // console.log('Usuarios:', usuarios)
+        // console.log('Nombres:', nombre)
+        // console.log('mail:', email)
+        if (!nombre || !email) {
+            alert('Por favor, completa todos los campos');
+            return;
+        } 
+        try {
+                     
+            await axios.post('http://localhost:8080/miembro', {nombre,email});
+            console.log('Datos enviados correctamente');
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
+        }
 
       };
     
