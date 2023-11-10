@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
@@ -8,13 +8,24 @@ export const Miembros = () => {
 
 
 
- const [miembros, setmiembros] = useState([{id:1, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}, 
- {id:2, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}]);
+    const [miembros, setmiembros] = useState([{id:1, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}, 
+    {id:2, nombre:"Bautista", apellido:"Janse", mail:"hola@gmail"}]);
 
-const eliminar = (id) =>{
-  const nuevos = miembros.filter(miembro=>miembro.id !== id);
-  setmiembros(nuevos);
-}
+    const eliminar = (id) =>{
+      const nuevos = miembros.filter(miembro=>miembro.id !== id);
+      setmiembros(nuevos);
+    }
+
+    useEffect(()=>{
+      mostrarMiembros();
+    }, []);
+
+    const mostrarMiembros = async ()=>{
+
+      const result = await axios.get(`http://localhost:8080/miembros`);
+      setmiembros=(result.data)
+
+    }
 
   return (
     <div>
@@ -65,7 +76,7 @@ const eliminar = (id) =>{
             <button>Agregar Miembro</button>
       </Link>
 
-      <Link to="/">
+      <Link to="/Home">
             <button>Volver</button>
       </Link>
 
