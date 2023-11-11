@@ -13,8 +13,10 @@ export const Documentos = () => {
   useEffect(() => {
     const obtenerDocumentos = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/documento"); // Ajusta la URL según tu API
-        setDocumentosGuardados(response.data); // Ajusta la estructura de datos según tu API
+        const response = await axios.get("http://localhost:8080/documento/viaje/1"); // Ajusta la URL según tu API
+        setDocumentosGuardados(response.data);
+        console.log('Documentos obtenidos correctamente:', response.data);
+
       } catch (error) {
         console.error("Error al obtener documentos:", error);
       }
@@ -39,7 +41,7 @@ export const Documentos = () => {
         <ul>
           {documentos.map((doc, index) => (
             <li key={index}>
-              <strong>Título:</strong> {doc.tituloDocumento}
+              <strong>Título:</strong> {doc.id}
             </li>
           ))}
         </ul>
@@ -51,11 +53,11 @@ export const Documentos = () => {
     <>
       <h1>Documentos</h1>
       <h3>----------------------</h3>
-      <ListaDesplegable tipo="Transporte" documentos={documentosGuardados.filter((doc) => doc.tipoDocumento === "Transporte")} />
+     {/* <ListaDesplegable tipo="Transporte" documentos={documentosGuardados} /> */}
       <h3></h3>
-      <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados.filter((doc) => doc.tipoDocumento === "Alojamiento")} />
+     {/* <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados} /> */}
       <h3></h3>
-      <ListaDesplegable tipo="Otros" documentos={documentosGuardados.filter((doc) => doc.tipoDocumento === "Otros")} />
+     {/* <ListaDesplegable tipo="Otros" documentos={documentosGuardados} /> */}
 
       <Link to="/Documentos/AgregarDocumentos">
         <button>Agregar Documento</button>

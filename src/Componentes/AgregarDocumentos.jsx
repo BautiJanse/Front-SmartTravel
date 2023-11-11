@@ -24,8 +24,8 @@ export const AgregarDocumentos = () => {
 
     const formData = new FormData();
     formData.append("file", documento);
-
-    await axios.post("http://localhost:8080/documento/1/Transporte", formData);
+    
+    await axios.post("http://localhost:8080/documento/1/"+tipoDocumento, formData);
     console.log("Datos enviados correctamente");
 
     setDocumento(null);
@@ -34,9 +34,6 @@ export const AgregarDocumentos = () => {
     navigate("/Documentos");
   };
 
-  useEffect(() => {
-    // Puedes mantener esta parte si necesitas alguna lógica de inicialización
-  }, []);
 
   return (
     <>
@@ -54,7 +51,7 @@ export const AgregarDocumentos = () => {
         </select>
       </div>
       <div>
-        <label>Titulo del Documento</label>
+        {/*<label>Titulo del Documento</label>*/}
         {/*<input type="text" value={tituloDocumento} onChange={(e) => setTituloDocumento(e.target.value)}></input>*/}
       </div>
       <div>
