@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export const Documentos = () => {
   const [documentosGuardados, setDocumentosGuardados] = useState([]);
@@ -10,11 +11,16 @@ export const Documentos = () => {
   });
 
   useEffect(() => {
-    const documentosGuardadosLocalStorage = localStorage.getItem("documentosGuardados");
-    if (documentosGuardadosLocalStorage) {
-      const documentos = JSON.parse(documentosGuardadosLocalStorage);
-      setDocumentosGuardados(documentos);
-    }
+    const obtenerDocumentos = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/documento"); // Ajusta la URL según tu API
+        setDocumentosGuardados(response.data); // Ajusta la estructura de datos según tu API
+      } catch (error) {
+        console.error("Error al obtener documentos:", error);
+      }
+    };
+
+    obtenerDocumentos();
   }, []);
 
   const toggleVisibilidadLista = (tipo) => {

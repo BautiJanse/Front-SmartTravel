@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const AgregarDocumentos = () => {
   const [tipoDocumento, setTipoDocumento] = useState("");
-  const [tituloDocumento, setTituloDocumento] = useState("");
+  // const [tituloDocumento, setTituloDocumento] = useState("");
   const [documento, setDocumento] = useState(null);
-  const [documentosGuardados, setDocumentosGuardados] = useState([]);
   const navigate = useNavigate();
 
   const handleFileChange = (e) => {
@@ -14,33 +14,28 @@ export const AgregarDocumentos = () => {
     setDocumento(selectedFile);
   };
 
-  const guardarDocumento = () => {
-
-    if (!tituloDocumento || !tipoDocumento || !documento) {
-      alert("Por favor, completa todos los campos antes de guardar el documento.");
+  const guardarDocumento = async () => {
+    if (!tipoDocumento || !documento) {
+      alert(
+        "Por favor, completa todos los campos antes de guardar el documento."
+      );
       return;
     }
 
-    const nuevoDocumento = { tipoDocumento, tituloDocumento, documento };
-    const nuevosDocumentos = [...documentosGuardados, nuevoDocumento];
+    const formData = new FormData();
+    formData.append("file", documento);
 
-    setDocumentosGuardados(nuevosDocumentos);
+    await axios.post("http://localhost:8080/documento/1/Transporte", formData);
+    console.log("Datos enviados correctamente");
 
-    localStorage.setItem("documentosGuardados", JSON.stringify(nuevosDocumentos));
-
-    setTipoDocumento("");
-    setTituloDocumento("");
     setDocumento(null);
-    //asd
+    setTipoDocumento("");
 
-    navigate("/Documentos")
+    navigate("/Documentos");
   };
 
   useEffect(() => {
-    const documentosGuardadosLocalStorage = localStorage.getItem("documentosGuardados");
-    if (documentosGuardadosLocalStorage) {
-      setDocumentosGuardados(JSON.parse(documentosGuardadosLocalStorage));
-    }
+    // Puedes mantener esta parte si necesitas alguna lógica de inicialización
   }, []);
 
   return (
@@ -48,7 +43,10 @@ export const AgregarDocumentos = () => {
       <h2>Agregar Documentos</h2>
       <div>
         <label>Tipo de Documento</label>
-        <select value={tipoDocumento} onChange={(e) => setTipoDocumento(e.target.value)}>
+        <select
+          value={tipoDocumento}
+          onChange={(e) => setTipoDocumento(e.target.value)}
+        >
           <option value="">Selecciona tipo de Documento</option>
           <option value="Transporte">Transporte</option>
           <option value="Alojamiento">Alojamiento</option>
@@ -57,11 +55,15 @@ export const AgregarDocumentos = () => {
       </div>
       <div>
         <label>Titulo del Documento</label>
-        <input type="text" value={tituloDocumento} onChange={(e) => setTituloDocumento(e.target.value)}></input>
+        {/*<input type="text" value={tituloDocumento} onChange={(e) => setTituloDocumento(e.target.value)}></input>*/}
       </div>
       <div>
         <label>Adjunta el Archivo</label>
-        <input type="file" onChange={handleFileChange} accept="application/pdf,image/jpeg,image/png" />
+        <input
+          type="file"
+          onChange={handleFileChange}
+          accept="application/pdf"
+        />
         {documento ? (
           <p>Archivo seleccionado: {documento.name}</p>
         ) : (
@@ -69,11 +71,10 @@ export const AgregarDocumentos = () => {
         )}
       </div>
       <button onClick={guardarDocumento}>Guardar Documento</button>
-      
+
       <Link to="/Documentos">
         <button>Volver</button>
       </Link>
-
     </>
   );
 };
