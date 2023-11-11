@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+
 
 
 export const AgregarActividad = () => {
@@ -10,16 +12,30 @@ export const AgregarActividad = () => {
     const [costo, setCosto] = useState('')
     const [actividades, setActividades] = useState([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const nuevaActividad = { descripcion, fecha, costo };
         setActividades([...actividades, nuevaActividad]);
         setDescripcion('');
         setFecha('');
         setCosto('')
-        console.log(descripcion)
-        console.log(fecha)
-        console.log(costo)
+       
+
+        if (!descripcion || !fecha || !costo ) {
+            alert('Por favor, completa todos los campos');
+            return;
+        }
+
+        try {         
+            await axios.post('http://localhost:8080/actividad', {descripcion,fecha,costo});
+            console.log('Datos enviados correctamente');
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
+        }
+
+
+
+
 
       };
 

@@ -15,9 +15,7 @@ export const AgregarMiembro = () => {
         setUsuarios([...usuarios, nuevoUsuario]);
         setNombre('');
         setEmail('');
-        // console.log('Usuarios:', usuarios)
-        // console.log('Nombres:', nombre)
-        // console.log('mail:', email)
+       
         if (!nombre || !email) {
             alert('Por favor, completa todos los campos');
             return;

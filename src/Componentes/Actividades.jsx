@@ -1,15 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 export const Actividades = () => {
 
-  const [actividades, setactividades] = useState([{id:1, descripcion:"Partido de Futbol", fecha:"19/11/2023", costo:"$ 500"}, 
- {id:2, descripcion:"Partido de Basket", fecha:"19/11/2023", costo:"$ 500"}, {id:5, descripcion:"Partido", fecha:"19/11/2023", costo:"$ 500"}]);
+  const [actividades, setActividades] = useState([]);
 
-const eliminar = (id) =>{
-  const nuevos = actividades.filter(actividad=>actividad.id !== id);
-  setactividades(nuevos);
-}
+  useEffect(() => {
+    obtenerActividades();
+  }, []); 
+
+  const obtenerActividades = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/actividad');
+      setActividades(response.data);
+      console.log('Actividades obtenidos correctamente:', response.data);
+    } catch (error) {
+      console.error('Error al obtener Actividades:', error);
+    }
+  };
+
+
+
 
 
   return (
@@ -22,7 +35,6 @@ const eliminar = (id) =>{
 
         <thead>
           <tr>
-            <th>Id</th>
             <th>Descripcion</th>
             <th>Fecha</th>
             <th>Costo</th>
@@ -36,7 +48,6 @@ const eliminar = (id) =>{
 
         {actividades.map(actividad => (
           <tr key={actividad.id}>
-            <td>{actividad.id}</td>
             <td>{actividad.descripcion}</td>
             <td>{actividad.fecha}</td>
             <td>{actividad.costo}</td>

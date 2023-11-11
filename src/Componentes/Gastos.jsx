@@ -1,19 +1,28 @@
 import '../Styles/gastos.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 export const Gastos = () => {
 
-  const [gastos, setGastos] = useState([{id:1, miembro:"Bautista", importe: 500}, 
-  {id:2, miembro:"Bautista", importe: 500}, {id:3, miembro:"Bautista", importe: 500}]);
+  const [gastos, setGastos] = useState([]);
 
-const eliminar = (id) =>{
-  const nuevos = gastos.filter(gasto=>gasto.id !== id);
-  setGastos(nuevos);
-}
+  useEffect(() => {
+    obtenerGastos();
+  }, []);
 
+  const obtenerGastos = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/gasto');
+      setGastos(response.data);
+      console.log('Gastos obtenidos correctamente:', response.data);
+    } catch (error) {
+      console.error('Error al obtener miembros:', error);
+    }
+
+  };
 
 
   return (
@@ -27,8 +36,8 @@ const eliminar = (id) =>{
 
   <thead>
     <tr>
-      <th>Id</th>
       <th>Nombre</th>
+      <th>Motivo</th>
       <th>Importe</th>
       <th>Actions</th>
 
@@ -40,8 +49,8 @@ const eliminar = (id) =>{
 
   {gastos.map(gasto => (
     <tr key={gasto.id}>
-        <td>{gasto.id}</td>
         <td>{gasto.miembro}</td>
+        <td>{gasto.motivo}</td>
         <td>{gasto.importe}</td>
       
 
@@ -70,3 +79,4 @@ const eliminar = (id) =>{
     </div>
   )
 }
+

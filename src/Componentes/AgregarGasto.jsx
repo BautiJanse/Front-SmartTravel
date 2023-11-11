@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from "axios";
+
 
 export const AgregarGasto = () => {
 
@@ -9,16 +11,25 @@ export const AgregarGasto = () => {
     const [importe, setImporte] = useState('')
     const [gastos, setGastos] = useState([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const nuevoGasto = { miembro, motivo, importe };
         setGastos([...gastos, nuevoGasto]);
         setMiembro('');
         setMotivo('');
         setImporte('')
-        console.log(miembro)
-        console.log(motivo)
-        console.log(importe)
+      
+        if (!miembro || !motivo || !importe) {
+            alert('Por favor, completa todos los campos');
+            return;
+        } 
+        try {
+                     
+            await axios.post('http://localhost:8080/gasto', {miembro, motivo, importe});
+            console.log('Datos enviados correctamente');
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
+        }
       };
 
   return (
