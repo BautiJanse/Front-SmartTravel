@@ -11,15 +11,18 @@ export const AgregarActividad = () => {
     const [fecha, setFecha] = useState('')
     const [costo, setCosto] = useState('')
     const [actividades, setActividades] = useState([])
+    const [viajeId, setViajeId] = useState(0)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const nuevaActividad = { descripcion, fecha, costo };
+        const nuevaActividad = { descripcion, fecha, costo, viajeId};
         setActividades([...actividades, nuevaActividad]);
         setDescripcion('');
         setFecha('');
-        setCosto('')
-       
+        setCosto('');
+        setViajeId(parseInt(localStorage.getItem("viajeId")))
+        
+        console.log(nuevaActividad)
 
         if (!descripcion || !fecha || !costo ) {
             alert('Por favor, completa todos los campos');
@@ -27,7 +30,7 @@ export const AgregarActividad = () => {
         }
 
         try {         
-            await axios.post('http://localhost:8080/actividad', {descripcion,fecha,costo});
+            await axios.post('http://localhost:8080/actividad', { descripcion, fecha, costo, viajeId});
             console.log('Datos enviados correctamente');
         } catch (error) {
             console.error('Error al enviar datos:', error);
