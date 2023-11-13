@@ -21,6 +21,7 @@ export const AgregarActividad = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         const nuevaActividad = { nombreActividad:nombre_actividad, fecha, lugar, viajeId};
         setActividades([...actividades, nuevaActividad]);
         setNombreAct('');
