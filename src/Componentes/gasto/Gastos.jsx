@@ -1,4 +1,4 @@
-import '../Styles/gastos.css'
+import '../../Styles/gastos.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
