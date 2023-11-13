@@ -21,9 +21,11 @@ export const Actividades = () => {
     }
   };
 
-
-
-
+  const buscarFecha = (fecha) =>{
+      const date = new Date(fecha + (1 * 24 * 60 * 60 * 1000)) // LE AGREGO UN DIA PORQ SE GUARDA UN DIAS MENOS EN EL BACKEND
+      
+      return date.toLocaleDateString();
+  }
 
   return (
     <div>
@@ -35,9 +37,9 @@ export const Actividades = () => {
 
         <thead>
           <tr>
-            <th>Descripcion</th>
+            <th>Actividad</th>
             <th>Fecha</th>
-            <th>Costo</th>
+            <th>Lugar</th>
             <th>Actions</th>
 
 
@@ -48,9 +50,9 @@ export const Actividades = () => {
 
         {actividades.map(actividad => (
           <tr key={actividad.id}>
-            <td>{actividad.descripcion}</td>
-            <td>{actividad.fecha}</td>
-            <td>{actividad.costo}</td>
+            <td>{actividad.nombreActividad}</td>
+            <td>{buscarFecha(actividad.fecha)}</td>
+            <td>{actividad.lugar}</td>
 
             <td>
               <button onClick={() => eliminar(actividad.id)}>

@@ -1,11 +1,11 @@
 import { NavLink, Route, Routes } from "react-router-dom"
 import React from "react"
-import './../Styles/home.css';
+import '../Styles/home.css';
 
 
 export const Home = () => {
 
-
+  sessionStorage.setItem("viajeId", 1)  // esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
 
 
 
