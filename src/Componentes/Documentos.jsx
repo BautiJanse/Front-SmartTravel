@@ -10,6 +10,11 @@ export const Documentos = () => {
     otros: false,
   });
 
+  /*
+    localhost:8080/documento/viaje/{idViaje} -> esta llamada devuelve todos los id de documentos, nombre y tipo de un idViaje
+    luego si lo queres ver podes llamar a -> localhost:8080/documento/{id} 
+  */
+
   useEffect(() => {
     const obtenerDocumentos = async () => {
       try {
