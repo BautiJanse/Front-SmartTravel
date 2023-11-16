@@ -10,6 +10,7 @@ import { AgregarActividad } from "./Componentes/actividad/AgregarActividad"
 import { Login } from "./Componentes/Login"
 import { AgregarGasto } from "./Componentes/gasto/AgregarGasto"
 import { AgregarDocumentos } from "./Componentes/documento/AgregarDocumentos"
+import { CrearEncuesta } from "./Componentes/encuestas/CrearEncuesta"
 
 
 export const TravelApp = () => {
@@ -30,6 +31,7 @@ export const TravelApp = () => {
         <Route path="/AgregarActividad" element={<AgregarActividad></AgregarActividad>}></Route>
         <Route path="/AgregarGasto" element={<AgregarGasto></AgregarGasto>}></Route>
         <Route path="/Documentos/AgregarDocumentos" element={<AgregarDocumentos></AgregarDocumentos>}></Route>
+        <Route path="/Miembros/CrearEncuesta" element={<CrearEncuesta></CrearEncuesta>}></Route>
 
       </Routes>
     </div>

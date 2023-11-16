@@ -78,6 +78,11 @@ export const Miembros = () => {
       <Link to="/AgregarMiembro">
             <button>Agregar Miembro</button>
       </Link>
+      
+      <Link to="/Miembros/CrearEncuesta">
+            <button>Crear Encuesta</button>
+      </Link>
+
 
       <Link to="/Home">
             <button>Volver</button>
