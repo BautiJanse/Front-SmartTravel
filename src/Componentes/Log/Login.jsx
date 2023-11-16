@@ -21,13 +21,13 @@ const Login = () => {
                 <div className="flex justify-between items-center">
                     <div className="flex gap-2 items-center">
                         <input type="checkbox" name="" id="" />
-                        <label htmlFor="Remember Me">Recuerdame  </label>
+                        <label htmlFor="Remember Me">Recuerdame</label>
                     </div>
-                    <Link to='' className="text-blue-500">Recuperar Contraseña</Link>
+                    <Link to='' className="text-blue-500 ml-2">Recuperar Contraseña</Link>
                 </div>
                 <button className="w-full mb-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300"> <Link to="/Home">Iniciar Sesion</Link></button>
                 <div>
-                    <span className="m-4">No tienes Cuenta? <Link className="text-blue-500" to='/Register'>Crear una</Link></span>
+                    <span className="m-4">No tienes Cuenta? <Link className="text-blue-500 ml-2" to='/Register'>¡Crea una ahora!</Link></span>
                 </div>
                 </form>
             </div>

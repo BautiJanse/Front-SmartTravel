@@ -6,7 +6,7 @@ import Home from './HomeLogica'
 function App() {
 
   return (
-    <div className='text-white h-[100vh] flex justify-center items-center bg-cover' style={{"backgroundImage": "url('src/Componentes/Log/assats/ViajeAmigos2.jpg')"}}>
+    <div className='text-white h-[100vh] flex justify-center items-center bg-cover' style={{"backgroundImage": "url('src/Componentes/Log/assats/gpt.png')"}}>
       <Routes>
         <Route path='/' element={<Home/>}></Route> 
         <Route path='/Login' element={<Login/>}></Route> 
