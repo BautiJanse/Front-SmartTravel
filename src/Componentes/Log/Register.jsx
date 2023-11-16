@@ -31,19 +31,18 @@ import axios from "axios";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verifica que todos los campos estén completos
     if (!userData.nombreUs || !userData.email || !userData.contraseña || !confirmPassword) {
       alert("Por favor, complete todos los campos.");
       return;
     }
 
-    // Verifica que ambas contraseñas sean iguales
+  
     if (userData.contraseña !== confirmPassword) {
       alert("Las contraseñas no coinciden.");
       return;
     }
 
-    // Realiza la solicitud Axios POST al servidor para registrar al usuario
+
     try {
       const response = await axios.post("http://localhost:8080/usuario", userData);
 
@@ -81,7 +80,7 @@ import axios from "axios";
           </div>
           <div className="relative my-4">
             <input
-              type="text"
+              type="email"
               name="email"
               value={userData.email}
               onChange={handleChange}
