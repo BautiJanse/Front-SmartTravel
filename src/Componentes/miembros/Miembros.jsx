@@ -4,8 +4,9 @@ import axios from 'axios';
 import '../../Styles/miembros.css';
 
 
-
 export const Miembros = () => {
+
+
 
     const [miembros, setMiembros] = useState([]);
 
@@ -17,6 +18,7 @@ export const Miembros = () => {
       try {
         const response = await axios.get('http://localhost:8080/miembro');
         setMiembros(response.data);
+        console.log(miembros);
         console.log('Miembros obtenidos correctamente:', response.data);
       } catch (error) {
         console.error('Error al obtener miembros:', error);
@@ -34,62 +36,36 @@ export const Miembros = () => {
       }
     };
 
-  return (
+   return (
     <div>
-      
-    
-      
-      <div className="fila">
+    <header className="header-miembros">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/" className="miembros">Miembros</a>
+      <a href="/" className="icon">ll</a>
+    </header>
 
-        <table className="tablaMiembros">
+    <section className="lista-miembros" id="section-a">
+      <h1 className="title-miembros">Lista de miembros</h1>
+      {miembros.map((miembro) => (
+          <div className="container-miembros" key={miembro.id}>
+            <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
+            <p className="member-miembros">{miembro.nombre}</p>
+            <button className="eliminar-miembro" onClick={() => handleEliminarMiembro(miembro.id)}>Eliminar</button>
+          </div>
+        ))}
 
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Mail</th>
-              <th>Actions</th>
-
-
-            </tr>
-          </thead>
-
-          <tbody>
-
-          {miembros.map(miembro => (
-            <tr key={miembro.id}>
-              <td>{miembro.nombre}</td>
-              <td>{miembro.email}</td>
-
-              <td>
-                <button onClick={() => handleEliminarMiembro(Number(miembro.id))}>
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-
-          </tbody>
-
-        </table>
-
-      </div>
       
 
-      <Link to="/AgregarMiembro">
-            <button>Agregar Miembro</button>
-      </Link>
-      
-      <Link to="/Miembros/CrearEncuesta">
-            <button>Crear Encuesta</button>
-      </Link>
+    <Link to="/AgregarMiembro" className="link-miembros">
+    <div className="add-miembro">
 
+        <p>Añadir Miembro</p>
 
-      <Link to="/Home">
-            <button>Volver</button>
-      </Link>
-
-
-    
     </div>
+    </Link>
+
+    </section>
+
+  </div>
   )
 }

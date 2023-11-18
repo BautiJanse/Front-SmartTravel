@@ -1,23 +1,4 @@
-.tablaMiembros {
-    width: 100%;
-    border-collapse: collapse;
-    padding: 10px;
-  }
 
-  .tablaMiembros th, .tablaMiembros td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .tablaMiembros th {
-    background-color: #f2f2f2;
-  }
-
-  .tablaMiembros tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
 
 .header-miembros{
     position:fixed;
@@ -83,7 +64,7 @@
 
 .add-miembro{
   margin-top:30px;
-  margin-left:28px;
+  margin-left:20px;
   border-radius: 20px;
   background-color: #D0CBFF;
   background-size:cover;
@@ -101,4 +82,19 @@
 .link-miembros {
   text-decoration: none;
   color: black;
+}
+
+.eliminar-miembro{
+  
+  border-radius: 20px;
+  background-color: #D0CBFF;
+  background-size:cover;
+  background-position:center;
+  
+  margin-left:auto;
+  height:35px;
+  width: 30%;
+  font-size:15px;
+  font-weight: bold;
+  
 }
