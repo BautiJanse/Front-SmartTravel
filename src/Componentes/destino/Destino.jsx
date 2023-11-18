@@ -8,30 +8,28 @@ import axios from "axios";
 export const Destino = () => {
 
     const [destino, setDestino] = useState('');
-    const [fechaInicio, setFechaInicio] = useState('');
+    const [fechaIncio, setFechaInicio] = useState('');
     const [fechaFin, setFechaFin] = useState('');
 
     const [viaje, setViaje] = useState([]);
 
-    const viajeId = sessionStorage.getItem("viajeId")
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const nuevoViaje = { destino,fechaInicio, fechaFin };
+      const nuevoViaje = { destino, fechaIncio, fechaFin };
       setViaje([...viaje, nuevoViaje]);
       setDestino('');
       setFechaInicio('');
       setFechaFin('');
      
-      if (!destino || !fechaInicio || !fechaFin) {
+      if (!destino || !fechaIncio || !fechaFin) {
           alert('Por favor, completa todos los campos');
           return;
       } 
       try {
-          
-          await axios.post('http://localhost:8080/destino', {viajeId,ciudadDestino: destino,fechaInicio, fechaFin});
+                   
+          await axios.post('http://localhost:8080/destino', {destino, fechaIncio, fechaFin, viajeId:sessionStorage.getItem('viajeId')});
           console.log('Datos enviados correctamente');
-      } catch (error) {""
+      } catch (error) {
           console.error('Error al enviar datos:', error);
       }
 
@@ -42,25 +40,34 @@ export const Destino = () => {
     
     <div>
 
-      <h1>Destino</h1>
 
+        <header className="header-destinos">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/" className="miembros">Destinos</a>
+      <a href="/" className="icon"></a>
+    </header>
+      
+    <section className="lista-miembros2" id="section-a">
+    <div className="form1-destinos">
       <form onSubmit={handleSubmit}>
 
-            <input type="text" placeholder="Ingresa el destino..." value={destino} onChange={(e) => setDestino(e.target.value)}/>
+        <p className="p-style1">Destino</p>
 
-            <input type="text" placeholder="Ingresa el fecha inicio..."  value={fechaInicio} onChange={(e) => setFechaInicio(e.target.value)}/>
+            <input type="text" placeholder="" value={destino} onChange={(e) => setDestino(e.target.value)}/>
+              <p className="p-style">Fecha de Inicio</p>
+            <input type="text" placeholder="yyyy-mm-dd"  value={fechaIncio} onChange={(e) => setFechaInicio(e.target.value)}/>
+              <p className="p-style">Fecha de Finalizacion</p>
+            <input type="text" placeholder="yyyy-mm-dd"  value={fechaFin} onChange={(e) => setFechaFin(e.target.value)}/>
+            <br></br>
 
-            <input type="text" placeholder="Ingresa el fecha fin..."  value={fechaFin} onChange={(e) => setFechaFin(e.target.value)}/>
-
-
-            <button type="submit">Confirmar destino</button>
+            <button type="submit" className='add-destino'>Confirmar destino</button>
 
         </form>
+        </div>
 
-        <Link to="/Home">
-            <button>Volver</button>
-        </Link>
+        
 
+</section>
 
 
     </div>

@@ -14,13 +14,14 @@
 .header-home{
     top:0;
     left:0;
-    width:100%;
+    width:93%;
 
     display:flex;
     justify-content: space-between;
     align-items: center;
 
-    padding:15px 15px;
+    padding:25px 15px;
+    font-weight:bold;
 }
 
 .header-home a{
@@ -49,7 +50,7 @@
 }
 
 .resumen-home{
-    margin-top:-20px;
+    margin-top:-40px;
 }
 
 .resumen-home p{

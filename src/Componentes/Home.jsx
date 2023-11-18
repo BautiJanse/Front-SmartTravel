@@ -15,8 +15,8 @@ export const Home = () => {
         <div>
       <header className="header-home">
         <a to="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-        <a href="/" className="viaje">VIAJE</a>
-        <a href="/" className="icon">ll</a>
+        <a href="/" className="viaje">Viaje</a>
+        <a href="/" className="icon"></a>
       </header>
 
 

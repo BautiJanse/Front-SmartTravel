@@ -41,7 +41,7 @@ export const Miembros = () => {
     <header className="header-miembros">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       <a href="/" className="miembros">Miembros</a>
-      <a href="/" className="icon">ll</a>
+      <a href="/" className="icon"></a>
     </header>
 
     <section className="lista-miembros" id="section-a">

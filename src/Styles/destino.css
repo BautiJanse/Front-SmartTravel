@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
-
 *{
     margin:0;
     padding:0;
@@ -15,7 +14,7 @@
     position:fixed;
     top:0;
     left:0;
-    width:100%;
+    width:93%;
 
     display:flex;
     justify-content: space-between;
@@ -26,18 +25,22 @@
 }
 
 
-
 .header-destinos a{
     text-decoration: none;
     color:black;
     font-size:27px;
 }
 
+.p-style1{
+    margin-top:100px;
+}
+
 .form1-destinos{
-    margin-top:130px;
-    margin-left:28px;
-    margin-bottom: 22px;
+   
     
+    margin: 0 auto;
+ 
+  width:70%;
 }
 
 .form1-destinos label, .form2-destinos label{
@@ -47,9 +50,13 @@
     margin-bottom:15px;
 }
 
+.p-style{
+    margin-top: 20px;
+}
+
 .form1-destinos input, .form2-destinos input{
-  width: 80%;
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -60,18 +67,11 @@
     margin-left:28px;
 }
 
-
 .add-destino{
     margin-top:30px;
-    margin-left:28px;
     border-radius: 20px;
     background-color: #D0CBFF;
-    background-size:cover;
-    background-position:center;
-    display: flex; /* Aplicar flexbox para centrar contenido */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-
+    border-color:#D0CBFF;
     height:49px;
     width:162px;
     font-size:15px;

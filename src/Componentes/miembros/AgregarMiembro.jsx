@@ -10,6 +10,7 @@ export const AgregarMiembro = () => {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [usuarios, setUsuarios] = useState([]);
+    const [mensaje, setMensaje] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,6 +18,7 @@ export const AgregarMiembro = () => {
         setUsuarios([...usuarios, nuevoUsuario]);
         setNombre('');
         setEmail('');
+        setMensaje('');
        
         if (!nombre || !email) {
             alert('Por favor, completa todos los campos');
@@ -26,15 +28,25 @@ export const AgregarMiembro = () => {
                      
             await axios.post('http://localhost:8080/miembro', {nombre,email});
             console.log('Datos enviados correctamente');
+            setMensaje('Miembro agregado correctamente');
+            window.alert('Miembro agregado correctamente!');
         } catch (error) {
             console.error('Error al enviar datos:', error);
+            setMensaje('Error al agregar miembro');
         }
+
 
       };
     
   return (
     <div>
-        <h3>Agregar Miembro</h3>
+
+<header className="header-miembros">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/" className="miembros">Miembros</a>
+      <a href="/" className="icon"></a>
+    </header>
+        {/* <h3>Agregar Miembro</h3>
 
         <form onSubmit={handleSubmit}>
 
@@ -48,7 +60,27 @@ export const AgregarMiembro = () => {
 
         <Link to="/Miembros">
             <button>Volver</button>
-        </Link>
+        </Link>  */}
+         <section className="lista-miembros2" id="section-a">
+    <div className="form1-destinos">
+      <form onSubmit={handleSubmit}>
+
+        <p className="p-style1">Nombre de Usuario</p>
+
+            <input type="text" placeholder="" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
+              <p className="p-style">Email</p>
+            <input type="text" placeholder=""  value={email} onChange={(e) => setEmail(e.target.value)}/>
+              
+            
+
+            <button type="submit" className='add-destino'>Confirmar Miembro</button>
+
+        </form>
+        {/* {mensaje && <p className="mensaje">{mensaje}</p>} */}
+        </div>
+
+</section> 
+        
 
         
     </div>
