@@ -27,56 +27,35 @@ export const Gastos = () => {
 
   return (
     <div>
+    <header className="header-miembros">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/" className="miembros">Gastos</a>
+      <a href="/" className="icon"></a>
+    </header>
 
-      <h1>Gastos</h1>
+    <section className="lista-miembros" id="section-a">
+      <h1 className="title-miembros">Lista de gastos</h1>
+      {gastos.map((gasto) => (
+          <div className="container-miembros" key={gasto.id}>
+            <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
+            <p className="member-miembros">{gasto.nombre_gasto}</p>
+            <p className="member-miembros">{gasto.importe}</p>
+          </div>
+        ))}
 
-      <div className="fila">
-
-<table className="tablaActividades">
-
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Motivo</th>
-      <th>Importe</th>
-      <th>Actions</th>
-
-
-    </tr>
-  </thead>
-
-  <tbody>
-
-  {gastos.map(gasto => (
-    <tr key={gasto.id}>
-        <td>{gasto.miembro}</td>
-        <td>{gasto.motivo}</td>
-        <td>{gasto.importe}</td>
       
 
-      <td>
-        <button onClick={() => eliminar(gasto.id)}>
-          Eliminar
-        </button>
-      </td>
-    </tr>
-  ))}
+    <Link to="/AgregarGasto" className="link-miembros">
+    <div className="add-miembro">
 
-  </tbody>
+        <p>Añadir Gasto</p>
 
-</table>
-
-</div>
-
-<Link to="/AgregarGasto">
-            <button>Agregar Gasto</button>
-      </Link>
-
-      <Link to="/Home">
-            <button>Volver</button>
-      </Link>
-    
     </div>
+    </Link>
+
+    </section>
+
+  </div>
   )
 }
 
