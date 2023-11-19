@@ -37,9 +37,21 @@ export const AgregarDocumentos = () => {
 
   return (
     <>
-      <h2>Agregar Documentos</h2>
-      <div>
-        <label>Tipo de Documento</label>
+      <header className="header-miembros">
+      <Link to="/Documentos">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
+      <a href="/" className="miembros">Documentos</a>
+      <a href="/" className="icon"></a>
+    </header>
+
+
+
+    <section className="lista-documentos" id="section-a">
+      
+      <div className="container-docs">
+      <div className="container-label">
+        <label className="label-style">Tipo de Documento</label>
         <select
           value={tipoDocumento}
           onChange={(e) => setTipoDocumento(e.target.value)}
@@ -50,11 +62,14 @@ export const AgregarDocumentos = () => {
           <option value="Otros">Otros</option>
         </select>
       </div>
+      
       <div>
         {/*<label>Titulo del Documento</label>*/}
         {/*<input type="text" value={tituloDocumento} onChange={(e) => setTituloDocumento(e.target.value)}></input>*/}
       </div>
-      <div>
+      
+      <div className="container-label">
+        
         <label>Adjunta el Archivo</label>
         <input
           type="file"
@@ -64,14 +79,19 @@ export const AgregarDocumentos = () => {
         {documento ? (
           <p>Archivo seleccionado: {documento.name}</p>
         ) : (
-          <p>Selecciona un archivo</p>
+          <p></p>
         )}
       </div>
-      <button onClick={guardarDocumento}>Guardar Documento</button>
+      
+      <button onClick={guardarDocumento} className='add-destino'>Guardar Documento</button>
+      
+      </div>
 
-      <Link to="/Documentos">
+      {/* <Link to="/Documentos">
         <button>Volver</button>
-      </Link>
+      </Link> */}
+      </section>
+      
     </>
   );
 };

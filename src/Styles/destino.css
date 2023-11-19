@@ -25,6 +25,22 @@
 }
 
 
+.add-documentos{
+    margin-top:30px;
+  margin-left:40px;
+  border-radius: 20px;
+  background-color: #D0CBFF;
+  background-size:cover;
+  background-position:center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height:49px;
+  width: 80%;
+  font-size:15px;
+  font-weight: bold;
+  
+}
 .header-destinos a{
     text-decoration: none;
     color:black;

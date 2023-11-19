@@ -92,21 +92,34 @@ export const Documentos = () => {
 
   return (
     <>
-      <h1>Documentos</h1>
-      <h3>----------------------</h3>
+    <header className="header-miembros">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/" className="miembros">Documentos</a>
+      <a href="/" className="icon"></a>
+    </header>
+    <section className="lista-miembros" id="section-a">
+      <h1 className="title-miembros">Documentos</h1>
+      
+      <div className="container-miembros">
       <ListaDesplegable tipo="Transporte" documentos={documentosGuardados} />
-      <h3></h3>
+      </div>
+      <div className="container-miembros">
       <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados} />
-      <h3></h3>
+      </div>
+      <div className="container-miembros">
       <ListaDesplegable tipo="Otros" documentos={documentosGuardados} />
+      </div>
+
 
       <Link to="/Documentos/AgregarDocumentos">
-        <button>Agregar Documento</button>
+      
+        <button className="add-documentos">Agregar Documento</button>
+      
       </Link>
+      
 
-      <Link to="/Home">
-        <button>Volver</button>
-      </Link>
+     
+      </section>
     </>
   );
 };
