@@ -13,7 +13,7 @@ export const Actividades = () => {
 
   const obtenerActividades = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/actividad');
+      const response = await axios.get(`http://localhost:8080/actividad/viaje/${sessionStorage.getItem("viajeId")}`);
       setActividades(response.data);
       console.log('Actividades obtenidos correctamente:', response.data);
     } catch (error) {
