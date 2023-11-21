@@ -28,9 +28,9 @@ export const Gastos = () => {
   return (
     <div>
     <header className="header-miembros">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/" className="miembros">Gastos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/Home" className="miembros">Gastos</a>
+      <a href="/Home" className="icon"></a>
     </header>
 
     <section className="lista-miembros" id="section-a">

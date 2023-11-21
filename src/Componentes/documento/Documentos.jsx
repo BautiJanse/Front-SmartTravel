@@ -93,9 +93,9 @@ export const Documentos = () => {
   return (
     <>
     <header className="header-miembros">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/" className="miembros">Documentos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/Home" className="miembros">Documentos</a>
+      <a href="/Home" className="icon"></a>
     </header>
     <section className="lista-miembros" id="section-a">
       <h1 className="title-miembros">Documentos</h1>

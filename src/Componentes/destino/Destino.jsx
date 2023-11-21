@@ -42,9 +42,9 @@ export const Destino = () => {
 
 
         <header className="header-destinos">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/" className="miembros">Destinos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/Home" className="miembros">Destinos</a>
+      <a href="/Home" className="icon"></a>
     </header>
       
     <section className="lista-miembros2" id="section-a">
