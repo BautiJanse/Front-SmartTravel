@@ -39,9 +39,9 @@ export const Miembros = () => {
    return (
     <div>
     <header className="header-miembros">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/" className="miembros">Miembros</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/Home" className="miembros">Miembros</a>
+      <a href="/Home" className="icon"></a>
     </header>
 
     <section className="lista-miembros" id="section-a">
