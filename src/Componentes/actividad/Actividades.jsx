@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import '../../Styles/actividades.css';
 
 export const Actividades = () => {
 
@@ -40,7 +40,11 @@ export const Actividades = () => {
 
   return (
     <div>
-      <h1>Actividades</h1>
+      <header className="header-miembros">
+      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      <a href="/Home" className="miembros">Actividades</a>
+      <a href="/Home" className="icon"></a>
+    </header>
 
     <div className="fila">
 
@@ -52,8 +56,6 @@ export const Actividades = () => {
             <th>Fecha</th>
             <th>Lugar</th>
             <th>Actions</th>
-
-
           </tr>
         </thead>
 
@@ -66,7 +68,7 @@ export const Actividades = () => {
             <td>{actividad.lugar}</td>
 
             <td>
-              <button onClick={() => eliminar(actividad.actividadId)}>
+              <button  className='eliminar-actividad' onClick={() => eliminar(actividad.actividadId)}>
                 Eliminar
               </button>
             </td>
@@ -81,17 +83,8 @@ export const Actividades = () => {
 
 
     <Link to="/AgregarActividad">
-            <button>Agregar Actividad</button>
+            <button className='add-actividad'>Agregar Actividad</button>
     </Link>
-
-    <Link to="/Home">
-            <button>Volver</button>
-    </Link>
-
-
-
-
-
     </div>
   )
 }

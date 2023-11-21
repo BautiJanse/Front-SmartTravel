@@ -18,7 +18,8 @@ export const CrearEncuesta = () => {
 
   const crearEncuesta = async () => {
     const response = await axios.post('http://localhost:8080/encuestas/hacerEncuestaPy/1/' + pregunta + '/' + respuestas.join(','))
-
+    const url = response.data.url
+    window.alert(url)
   };
 
   return (

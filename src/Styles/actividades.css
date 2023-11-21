@@ -1,0 +1,37 @@
+.tablaActividades{
+    width: 100%;
+    margin-top: 116px;
+}
+
+.add-actividad{
+    margin-top:30px;
+    margin-left:20px;
+    border-radius: 20px;
+    background-color: #D0CBFF;
+    background-size:cover;
+    background-position:center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height:49px;
+    width: 90%;
+    font-size:15px;
+    font-weight: bold;
+    margin-top:50px;
+}
+
+.eliminar-actividad{
+  
+    border-radius: 20px;
+    background-color: #D0CBFF;
+    background-size:cover;
+    background-position:center;
+    
+    margin-left:auto;
+    height:35px;
+  
+    
+    font-size:15px;
+    font-weight: bold;
+    
+  }
