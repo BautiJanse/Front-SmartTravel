@@ -27,6 +27,17 @@ export const Actividades = () => {
       return date.toLocaleDateString();
   }
 
+  const eliminar = async (id) =>{
+    try {
+      const response = await axios.delete(`http://localhost:8080/actividad/${id}`);
+      console.log('Se borro correctamente:', response.data);
+      window.location.reload(true)
+    } catch (error) {
+      console.error('Error al borrar actividades:', error);
+    }
+};
+  
+
   return (
     <div>
       <h1>Actividades</h1>
@@ -49,13 +60,13 @@ export const Actividades = () => {
         <tbody>
 
         {actividades.map(actividad => (
-          <tr key={actividad.id}>
+          <tr key={actividad.actividadId}>
             <td>{actividad.nombreActividad}</td>
             <td>{buscarFecha(actividad.fecha)}</td>
             <td>{actividad.lugar}</td>
 
             <td>
-              <button onClick={() => eliminar(actividad.id)}>
+              <button onClick={() => eliminar(actividad.actividadId)}>
                 Eliminar
               </button>
             </td>
