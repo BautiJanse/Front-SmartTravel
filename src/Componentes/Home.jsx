@@ -1,13 +1,47 @@
 import { NavLink, Route, Routes } from "react-router-dom"
-import React from "react"
+import React, { useEffect, useState } from "react"
+import axios from "axios";
 import '../Styles/home.css';
 
-
 export const Home = () => {
+  const [destino, setDestino] = useState('')
+  const [fecha, setFecha] = useState('')
 
   sessionStorage.setItem("viajeId", 1)  // esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
 
+  useEffect(() => {
+    getDestinoFinal();
+    getDiasFinal();
+  },[])
 
+  const getDestinoFinal = async () =>{
+    try{
+      const response = await axios.get(`http://localhost:8080/destino/destinoFinal/${sessionStorage.getItem("viajeId")}`);
+      setDestino(response.data)
+    }
+    catch (error) {
+      console.error('Error al obtener Actividades:', error);
+    }
+  }
+
+  const getDiasFinal = async () => {
+    try{
+      const response = await axios.get(`http://localhost:8080/destino/diasFinal/${sessionStorage.getItem("viajeId")}`);
+      setFecha(response.data);
+    }catch (error) {
+      console.error('Error al obtener Actividades:', error);
+    }
+  }
+
+  const getFecha = (fecha) =>{
+      if(fecha === null || fecha === 0){
+          return null
+      }
+
+      const date = new Date(fecha) // LE AGREGO UN DIA PORQ SE GUARDA UN DIAS MENOS EN EL BACKEND
+      
+      return date.toLocaleDateString();
+  }
 
   return (
 
@@ -23,7 +57,7 @@ export const Home = () => {
       <section className="resumen-home" id="section-a">
         <div className="contain">
           <h1>Resumen</h1>
-          <p>Destino: La Montaña <br />Fechas: Ida/Mes - Fin/Mes <br />Nro Integrantes: 5</p>
+          <p>Destino: {destino} <br />Fechas: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)} <br />Nro Integrantes: 5</p>
         </div>
       </section>
 
