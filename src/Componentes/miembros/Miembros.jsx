@@ -64,6 +64,11 @@ export const Miembros = () => {
     </div>
     </Link>
 
+    
+    <Link to="/Miembros/CrearEncuesta">
+            <button className="add-miembro">Crear Encuesta</button>
+    </Link>
+
     </section>
 
   </div>
