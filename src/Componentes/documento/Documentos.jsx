@@ -1,6 +1,8 @@
+// Documentos.js
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+ // Asegúrate de tener un archivo CSS asociado (Documentos.css) con los estilos proporcionados a continuación.
 
 export const Documentos = () => {
   const [documentosGuardados, setDocumentosGuardados] = useState([]);
@@ -13,15 +15,10 @@ export const Documentos = () => {
   useEffect(() => {
     obtenerDocumentos();
   }, []);
-  /*
-    localhost:8080/documento/viaje/{idViaje} -> esta llamada devuelve todos los id de documentos, nombre y tipo de un idViaje
-    luego si lo queres ver podes llamar a -> localhost:8080/documento/{id} 
-  */
+
   const obtenerDocumentos = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8080/documento/viaje/1"
-      );
+      const response = await axios.get("http://localhost:8080/documento/viaje/1");
       setDocumentosGuardados(response.data);
       console.log("Documentos obtenidos correctamente:", response.data);
     } catch (error) {
@@ -30,48 +27,41 @@ export const Documentos = () => {
   };
 
   const eliminarDocumentos = async (idDocumento) => {
-    await axios.delete("http://localhost:8080/documento/"+idDocumento , {responseType: "arraybuffer"})
+    await axios.delete("http://localhost:8080/documento/" + idDocumento, { responseType: "arraybuffer" });
 
     setDocumentosGuardados((prevDocumentos) =>
       prevDocumentos.filter((doc) => doc.id !== idDocumento)
     );
-  }
+  };
 
-  const descargarDocumento = async (idDocumento,nombreDocumento) => { 
-    const response= await axios.get("http://localhost:8080/documento/"+idDocumento+"/descargar")
-    console.log(response.data)
+  const descargarDocumento = async (idDocumento, nombreDocumento) => {
+    const response = await axios.get("http://localhost:8080/documento/" + idDocumento + "/descargar");
+    console.log(response.data);
 
-    const blob = new Blob([response.data], {type: "application/pdf"})
+    const blob = new Blob([response.data], { type: "application/pdf" });
 
-    const url = window.URL.createObjectURL(blob)
+    const url = window.URL.createObjectURL(blob);
 
-    const a = document.createElement('a');
-    a.href= url;
-    a.download= nombreDocumento;
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = nombreDocumento;
     document.body.appendChild(a);
     a.click();
 
-    window.URL.revokeObjectURL(url)
-    document.body.removeChild(a)
-    
-  }
-
-
-
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  };
 
   const toggleVisibilidadLista = (tipo) => {
     setVisibilidadListas((prevVisibilidadListas) => ({
-      ...prevVisibilidadListas,
+      ...Object.fromEntries(Object.keys(prevVisibilidadListas).map((key) => [key, false])),
       [tipo]: !prevVisibilidadListas[tipo],
     }));
   };
 
   const ListaDesplegable = ({ tipo, documentos }) => (
-    <div>
-      <h2
-        onClick={() => toggleVisibilidadLista(tipo)}
-        style={{ cursor: "pointer" }}
-      >
+    <div className={`lista-desplegable ${visibilidadListas[tipo] ? "visible" : ""}`}>
+      <h2 onClick={() => toggleVisibilidadLista(tipo)} style={{ cursor: "pointer" }}>
         {tipo} {visibilidadListas[tipo] ? "▼" : "►"}
       </h2>
       {visibilidadListas[tipo] && (
@@ -80,9 +70,11 @@ export const Documentos = () => {
             .filter((doc) => doc.tipo === tipo)
             .map((doc, index) => (
               <li key={index}>
-                <strong>Título:</strong> {doc.nombreDocumento}
-                <button onClick={() => descargarDocumento(doc.id,doc.nombreDocumento)}>Descargar</button>
-                <button onClick={() => eliminarDocumentos(doc.id)}>Eliminar</button>
+                <div>
+                  <strong>Título:</strong> {doc.nombreDocumento}
+                  <button className="button-list" onClick={() => descargarDocumento(doc.id, doc.nombreDocumento)}>Descargar</button>
+                  <button className="button-list" onClick={() => eliminarDocumentos(doc.id)}>Eliminar</button>
+                </div>
               </li>
             ))}
         </ul>
@@ -92,33 +84,33 @@ export const Documentos = () => {
 
   return (
     <>
-    <header className="header-miembros">
-      <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      <a href="/Home" className="miembros">Documentos</a>
-      <a href="/Home" className="icon"></a>
-    </header>
-    <section className="lista-miembros" id="section-a">
-      <h1 className="title-miembros">Documentos</h1>
-      
-      <div className="container-miembros">
-      <ListaDesplegable tipo="Transporte" documentos={documentosGuardados} />
-      </div>
-      <div className="container-miembros">
-      <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados} />
-      </div>
-      <div className="container-miembros">
-      <ListaDesplegable tipo="Otros" documentos={documentosGuardados} />
-      </div>
+      <header className="header-miembros">
+        <a href="/Home" className="go-back">
+          <i className="bx bx-chevron-left"></i>
+        </a>
+        <a href="/Home" className="miembros">
+          Documentos
+        </a>
+        <a href="/Home" className="icon"></a>
+      </header>
+      <section className="lista-miembros" id="section-a">
+        <h1 className="title-miembros">Documentos</h1>
 
+        <div className="navbar">
+          <div className="container-miembros">
+            <ListaDesplegable tipo="Transporte" documentos={documentosGuardados} />
+          </div>
+          <div className="container-miembros">
+            <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados} />
+          </div>
+          <div className="container-miembros">
+            <ListaDesplegable tipo="Otros" documentos={documentosGuardados} />
+          </div>
+        </div>
 
-      <Link to="/Documentos/AgregarDocumentos">
-      
-        <button className="add-documentos">Agregar Documento</button>
-      
-      </Link>
-      
-
-     
+        <Link to="/Documentos/AgregarDocumentos">
+          <button className="add-documentos">Agregar Documento</button>
+        </Link>
       </section>
     </>
   );

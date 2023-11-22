@@ -106,3 +106,54 @@
     font-size:15px;
     font-weight: bold;
 }
+
+/* Estilo para el contenedor de la lista desplegable */
+.container-miembros {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* / Estilo para el encabezado de la lista desplegable / */
+h2 {
+  cursor: pointer;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* / Estilo para la lista desplegable / */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* / Estilo para cada elemento de la lista desplegable / */
+li {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  font-size:15px;
+}
+
+/* / Estilo para los botones dentro de cada elemento de la lista desplegable / */
+.button-list {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+
+/* 
+/ Estilo para el botón Agregar Documento / */
+
+
+
