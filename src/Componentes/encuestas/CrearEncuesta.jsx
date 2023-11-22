@@ -23,10 +23,23 @@ export const CrearEncuesta = () => {
   };
 
   return (
-    <div>
-      <h1>Crear Encuesta</h1>      
 
-      <div>
+    
+    <div>
+
+      <header className="header-miembros">
+      <Link to="/Miembros">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
+      <a href="/" className="miembros">Encuestas</a>
+      <a href="/" className="icon"></a>
+      </header>
+
+      <section className="lista-documentos" id="section-a">    
+
+      
+      <div className="container-docs">
+      <div className="container-label">
         <label>Pregunta:</label>
         <input
           type="text"
@@ -34,6 +47,7 @@ export const CrearEncuesta = () => {
           onChange={(e) => setPregunta(e.target.value)}
         />
       </div>
+      <div className='container-label'>
       <div>
         <label>Respuestas:</label>
         {respuestas.map((respuesta, index) => (
@@ -45,14 +59,15 @@ export const CrearEncuesta = () => {
             />
           </div>
         ))}
-        <button onClick={agregarRespuesta}>Agregar Respuesta</button>
+        <button onClick={agregarRespuesta} className='add-destino'>Agregar Respuesta</button>
+        </div>
       </div>
-      <button onClick={crearEncuesta}>Crear Encuesta</button>
-
-      <Link to="/Miembros">
-            <button>Volver</button>
-      </Link>
-
+      </div>
+      
+      <button onClick={crearEncuesta} className='add-miembro'>Crear Encuesta</button>
+      
+      
+      </section>
     </div>
   );
 };

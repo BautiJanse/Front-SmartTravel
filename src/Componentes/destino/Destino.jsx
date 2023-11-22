@@ -55,9 +55,9 @@ export const Destino = () => {
 
             <input type="text" placeholder="" value={destino} onChange={(e) => setDestino(e.target.value)}/>
               <p className="p-style">Fecha de Inicio</p>
-            <input type="text" placeholder="yyyy-mm-dd"  value={fechaIncio} onChange={(e) => setFechaInicio(e.target.value)}/>
+            <input type="date" placeholder="yyyy-mm-dd"  value={fechaIncio} onChange={(e) => setFechaInicio(e.target.value)}/>
               <p className="p-style">Fecha de Finalizacion</p>
-            <input type="text" placeholder="yyyy-mm-dd"  value={fechaFin} onChange={(e) => setFechaFin(e.target.value)}/>
+            <input type="date" placeholder="yyyy-mm-dd"  value={fechaFin} onChange={(e) => setFechaFin(e.target.value)}/>
             <br></br>
 
             <button type="submit" className='add-destino'>Confirmar destino</button>

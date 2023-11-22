@@ -63,6 +63,7 @@
 
 .box-home{
     border-radius: 20px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.445),rgba(0,0,0,0.75)),url(../../public/planeasd.jpg); */
     background-color: #D0CBFF;
     background-size:cover;
     background-position:center;
@@ -72,13 +73,25 @@
    
     height:209px;
     width:174px;
-
+    
     font-style: italic;
     font-size:20px;
     text-decoration: none;
-
+    transition:0.4s;
+    /* color:rgba(255, 255, 255, 0.685); */
     color:black;
+
+    
 }
+
+.box-home:hover, .gastos-home:hover{
+    background-color: #d0cbffad;   
+    transform: scale(1.05); 
+    transition:0.4s;
+    
+}
+
+
 
 
 

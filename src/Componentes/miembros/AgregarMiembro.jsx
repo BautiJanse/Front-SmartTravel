@@ -42,7 +42,9 @@ export const AgregarMiembro = () => {
     <div>
 
 <header className="header-miembros">
+  <Link to="/Miembros">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
       <a href="/" className="miembros">Miembros</a>
       <a href="/" className="icon"></a>
     </header>

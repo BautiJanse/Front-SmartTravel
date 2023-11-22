@@ -47,24 +47,59 @@ export const AgregarActividad = () => {
 
   return (
     <div>
+
+<header className="header-miembros">
+      <Link to="/Actividades">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
+      <a href="/" className="miembros">Actividades</a>
+      <a href="/" className="icon"></a>
+    </header>
+
+    <section className="lista-documentos" id="section-a">
+
+    <div className="container-docs">
+      <div className="container-label">
         
-        <h3>Agregar Actividad</h3>
+        
 
         <form onSubmit={handleSubmit}>
+            
+        <div className="container-label">
 
-            <input type="text" placeholder="Ingresa la nombre de actividad" value={nombre_actividad} onChange={(e) => setNombreAct(e.target.value)}/>
+            <label>Nombre de la Actividad</label>
 
-            <input type="text" placeholder="Ingresa la fecha (YYYY-MM-DD)"  value={fecha} onChange={(e) => setFecha(e.target.value)}/>
+            <input type="text" placeholder="" value={nombre_actividad} onChange={(e) => setNombreAct(e.target.value)}/>
 
-            <input type="text" placeholder="Ingresa el lugar"  value={lugar} onChange={(e) => setLugar(e.target.value)}/>
+            </div>
 
-            <button type="submit">Agregar Actividad</button>
+            <div className="container-label">
+
+            <label>Fecha de la Actividad</label>
+
+            <input type="date" placeholder="yyyy-mm-dd"  value={fecha} onChange={(e) => setFecha(e.target.value)}/>
+
+            </div>
+            <div className="container-label">
+            
+            <label>Lugar de la Actividad</label>
+
+            <input type="text" placeholder=""  value={lugar} onChange={(e) => setLugar(e.target.value)}/>
+
+            </div>
+
+            
+
+            <button type="submit" className='add-destino'>Agregar Actividad</button>
+
+            
         </form>
 
-        <Link to="/Actividades">
-            <button>Volver</button>
-        </Link>
-
+</div>
+</div>
+        
+        </section>
     </div>
+    
   )
 }
