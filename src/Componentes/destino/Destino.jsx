@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../../Styles/destino.css';
 
 export const Destino = () => {
-  const [destino, setDestino] = useState('');
+  const [ciudadDestino, setCiudadDestino] = useState('');
   const [fechaInicio, setFechaInicio] = useState('');
   const [fechaFin, setFechaFin] = useState('');
 
@@ -14,17 +14,17 @@ export const Destino = () => {
     e.preventDefault();
 
     // Validar campos
-    if (!destino || !fechaInicio || !fechaFin) {
+    if (!ciudadDestino || !fechaInicio || !fechaFin) {
       alert('Por favor, completa todos los campos');
       return;
     }
 
-    const nuevoViaje = { destino, fechaInicio, fechaFin };
+    const nuevoViaje = { ciudadDestino, fechaInicio, fechaFin };
     setViaje([...viaje, nuevoViaje]);
 
     try {
       await axios.post('http://localhost:8080/destino', {
-        destino,
+        ciudadDestino,
         fechaInicio,
         fechaFin,
         viajeId: sessionStorage.getItem('viajeId'),
@@ -35,7 +35,7 @@ export const Destino = () => {
     }
 
     // Limpiar campos después del envío exitoso
-    setDestino('');
+    setCiudadDestino('');
     setFechaInicio('');
     setFechaFin('');
   };
@@ -55,12 +55,12 @@ export const Destino = () => {
       <section className="lista-miembros2" id="section-a">
         <div className="form1-destinos">
           <form onSubmit={handleSubmit}>
-            <p className="p-style1">Destino</p>
+            <p className="p-style1">Ciudad Destino</p>
             <input
               type="text"
               placeholder=""
-              value={destino}
-              onChange={(e) => setDestino(e.target.value)}
+              value={ciudadDestino}
+              onChange={(e) => setCiudadDestino(e.target.value)}
             />
 
             <p className="p-style">Fecha de Inicio</p>
