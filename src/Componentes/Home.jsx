@@ -57,7 +57,7 @@ export const Home = () => {
       <section className="resumen-home" id="section-a">
         <div className="contain">
           <h1>Resumen</h1>
-          <p>Destino/s: {destino} <br />Fechas: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)} <br />Nro Integrantes: 5</p>
+          <p>Destino/s: {destino} <br />Fechas: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)} <br /></p>
         </div>
       </section>
 
