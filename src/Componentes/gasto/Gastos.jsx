@@ -15,15 +15,24 @@ export const Gastos = () => {
 
   const obtenerGastos = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/gasto');
+      const response = await axios.get(`http://localhost:8080/gasto/viaje/${sessionStorage.getItem("viajeId")}`);
       setGastos(response.data);
       console.log('Gastos obtenidos correctamente:', response.data);
     } catch (error) {
-      console.error('Error al obtener miembros:', error);
+      console.error('Error al obtener gastos:', error);
     }
 
   };
 
+  const handleEliminarGasto = async (id) =>{
+    try {
+      const response = await axios.delete(`http://localhost:8080/gasto/${id}`);
+      console.log('Gasto eliminado correctamente:', response.data);
+      window.location.reload(true)
+    } catch (error) {
+      console.error('Error al eliminar gasto:', error);
+    }
+  }
 
   return (
     <div>
@@ -38,8 +47,9 @@ export const Gastos = () => {
       {gastos.map((gasto) => (
           <div className="container-miembros" key={gasto.id}>
             <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
-            <p className="member-miembros">{gasto.nombre_gasto}</p>
-            <p className="member-miembros">{gasto.importe}</p>
+            <p className="member-miembros">{gasto.nombreGasto}</p>
+            <p className="member-miembros">{gasto.monto}</p>
+            <button className="eliminar-miembro" onClick={() => handleEliminarGasto(gasto.gastoID)}>Eliminar</button>
           </div>
         ))}
 
