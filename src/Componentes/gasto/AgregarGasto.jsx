@@ -32,7 +32,7 @@ useEffect(() => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
-    const nuevoGasto = { miembro, motivo, importe };
+    const nuevoGasto = { idComprador:miembro, nombreGasto:motivo, monto:importe, idViaje:sessionStorage.getItem("viajeId") };
     setGastos([...gastos, nuevoGasto]);
     setMiembro('');
     setMotivo('');
@@ -75,12 +75,12 @@ const handleSubmit = async (e) => {
             
 
             <select className="select-miembro" name="miembro" placeholder="elegir.." value={miembro} onChange={(e) => setMiembro(e.target.value)}>
-  {usuarios.map((usuario) => (
-    <option key={usuario.id} value={usuario.id}>
-      {usuario.nombre}
-    </option>
-  ))}
-</select>
+                {usuarios.map((usuario) => (
+                  <option key={usuario.miembroId} value={usuario.miembroId}>
+                    {usuario.nombre}
+                  </option>
+                ))}
+            </select>
 
 
 
