@@ -12,7 +12,7 @@ export const Miembros = () => {
 
   const obtenerMiembros = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/miembro');
+      const response = await axios.get(`http://localhost:8080/miembro/viaje/${sessionStorage.getItem("viajeId")}`);
       setMiembros(response.data);
       console.log('Miembros obtenidos correctamente:', response.data);
     } catch (error) {
