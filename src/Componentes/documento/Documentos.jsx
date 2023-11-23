@@ -18,7 +18,7 @@ export const Documentos = () => {
 
   const obtenerDocumentos = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/documento/viaje/1");
+      const response = await axios.get(`http://localhost:8080/documento/viaje/${sessionStorage.getItem("viajeId")}`);
       setDocumentosGuardados(response.data);
       console.log("Documentos obtenidos correctamente:", response.data);
     } catch (error) {
