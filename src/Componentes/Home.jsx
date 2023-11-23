@@ -34,11 +34,11 @@ export const Home = () => {
   }
 
   const getFecha = (fecha) =>{
-      if(fecha === null || fecha === 0){
+      if(fecha === null || fecha === 0 || fecha === undefined){
           return null
       }
 
-      const date = new Date(fecha) // LE AGREGO UN DIA PORQ SE GUARDA UN DIAS MENOS EN EL BACKEND
+      const date = new Date(fecha + (1 * 24 * 60 * 60 * 1000))
       
       return date.toLocaleDateString();
   }
