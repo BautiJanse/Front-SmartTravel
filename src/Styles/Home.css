@@ -24,6 +24,9 @@
     font-weight:bold;
 }
 
+
+
+
 .header-home a{
     text-decoration: none;
     color:black;
@@ -92,6 +95,10 @@
 }
 
 
+.new-container{
+    
+}
+
 
 
 
@@ -114,3 +121,184 @@
     color:black;
 }
 
+.go-back-home{
+    font-size:30px;
+}
+
+.home-header{
+    top:0;
+    left:0;
+    width:414px;
+    height:65px;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding:15px 15px;
+    font-weight:bold;
+    background-color: rgba(255, 255, 255, 0.459);
+  
+}
+
+.home-header a{
+    font-family: lora;
+}
+
+.container-section1{
+    margin-left:18px;
+}
+
+.resumen{
+   color:rgba(128, 128, 128, 0.685);
+    margin-top:25px;
+    font-family: inter;
+}
+
+.destino{
+    margin-top:15px;
+    background-color: #EBEBEB;
+    width:159px;
+    height:37px;
+    border-radius:10px;
+    line-height: 37px;
+    text-align:center;
+    
+}
+
+.flex{
+    gap: 10px;
+    display: flex;
+    font-size:12px;
+}
+
+/* .box{
+    width: 121px;
+    height: 142px;
+    background-color: red;
+    margin-top:24px;
+    border-radius:20px;
+} */
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 111px;
+    height: 132px;
+    background-color: #EBEBEB;
+    margin-top: 24px;
+    border-radius: 20px;
+    border: 1px solid #F5F5F5;
+}
+
+.box img {
+    flex: 1.7; /* Esto hará que la imagen ocupe todo el espacio disponible en altura */
+    border-radius: 20px 20px 0 0; /* Aplicar esquinas redondeadas solo en la parte superior */
+}
+
+.box p {
+    flex: 1; /* Esto hará que el párrafo ocupe todo el espacio disponible en altura */
+    margin: 0; /* Eliminar el margen predeterminado del párrafo */
+    text-align: center; /* Centrar el texto */
+    line-height: 50px;
+    
+    background-color: white;/* Fondo blanco para la parte inferior */
+    border-radius: 0 0 20px 20px; /* Aplicar esquinas redondeadas solo en la parte inferior */
+}
+
+.flex p{
+    font-family: inter;
+    
+}
+
+.fecha{
+    margin-top:15px;
+    background-color: #EBEBEB;
+    width:159px;
+    height:37px;
+    border-radius:10px;
+    line-height: 37px;
+    text-align:center;
+}
+
+.box p{
+    font-family: inter;
+}
+
+.h1{
+   
+    font-family: inter;
+    margin-top:4px;
+    font-size:32px;
+    font-style: bold;
+}
+
+.container-box{
+    display:flex;
+    gap:10px;
+    height:142px;
+    width: 381px;
+}
+
+.usuarios{
+    background-color: #EBEBEB;
+    width: 350px;
+    height: 68px;
+    border-radius:15px;
+    text-align: center;
+    line-height: 68px;
+    margin-top:35px;
+}
+
+.usuarios p {
+    font-family: inter;
+    font-size:18px;
+}
+
+.gastos{
+    background-color: #D0CBFF;
+    width: 350px;
+    height: 56px;
+    border-radius:30px;
+    text-align: center;
+    line-height: 56px;
+    margin-top:15px;
+    color:white;
+    
+}
+
+.gastos p{
+    font-family: inter;
+    letter-spacing:1px;
+    font-size:18px;
+}
+
+.second-section {
+    
+    background-image: url(../../public/photo4jpg.jpg);
+    height: 321px;
+    /* Otra propiedad relacionada con el fondo si es necesario */
+    background-size:cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+    /* Añade más propiedades según tus necesidades */
+  }
+  
+  /* Otras reglas de estilo para el resto de tu página */
+  
+
+.first-section{
+    width:100%;
+    height:617px;
+    background-color: rgb(255, 255, 255);
+    
+    
+}
+
+
+
+
+
+.viaje{
+    margin-right: 50px; 
+    font-size:24px;
+    
+}

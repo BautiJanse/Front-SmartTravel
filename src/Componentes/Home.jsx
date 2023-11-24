@@ -46,13 +46,14 @@ export const Home = () => {
   return (
 
     <div>
-        <div>
+       {/*  <div>
       <header className="header-home">
         <a to="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
         <a href="/" className="viaje">Viaje</a>
         <a href="/" className="icon"></a>
       </header>
 
+<div className="new-container">
 
       <section className="resumen-home" id="section-a">
         <div className="contain">
@@ -85,6 +86,76 @@ export const Home = () => {
         </NavLink>
       </section>
     </div>
+    </div> */}
+    <section className="second-section" id="section-b">
+
+<header className="home-header">
+<a to="/" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
+        <a href="/" className="viaje">Viaje</a>
+        <a href="/" className="icon"></a>
+            </header>
+
+            
+              
+
+           </section> 
+
+
+<section className="first-section" id="section-a">
+  <div className="container-section1">
+  <p className="resumen">Resumen</p>
+  
+  <h1 className="h1">Cumple 25 De Juli</h1>
+  <div className="flex">
+  <p className="destino">Destino: {destino}</p>
+  <p className="fecha">Fecha: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)}</p>
+  </div>
+
+  
+<div className="container-box">
+<NavLink to="/Destino" >
+  <div className="box">
+  <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
+  <p>Destino {destino}</p>
+  </div>
+  </NavLink>
+
+  <NavLink to="/Documentos" >
+  
+  <div className="box">
+  <img src="public/project-documents.jpg" alt="Imagen" />
+  <p>Documentos</p>
+  </div>
+  </NavLink>
+
+  <NavLink to="/Actividades" >
+  <div className="box">
+  <img src="public/descarga (1).jpeg" alt="Imagen" />
+  <p>Actividades</p>
+  </div>
+  </NavLink>
+
+    
+
+  </div>
+
+  <NavLink to="/Miembros">
+  <div className="usuarios">
+      <p>Miembros</p>
+    </div>
+    </NavLink>
+    <NavLink to="/Gastos">
+    <div className="gastos">
+      <p>Gastos</p>
+    </div>
+    </NavLink>
+
+
+  </div>
+
+</section>
+
+
     </div>
 
 

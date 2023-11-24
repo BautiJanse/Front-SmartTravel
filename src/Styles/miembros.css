@@ -4,7 +4,8 @@
     position:fixed;
     top:0;
     left:0;
-    width:95%;
+    width:414px;
+    height:65px;
 
     display:flex;
     justify-content: space-between;
@@ -14,10 +15,15 @@
     font-weight: bold;
 }
 
+.header-miembros .miembros{
+  margin-right: 50px; 
+}
+
 .header-miembros a{
     text-decoration: none;
     color:black;
     font-size:27px;
+    font-family: lora;
 }
 
 .lista-miembros h1{
@@ -50,9 +56,9 @@
     font-size:30px;
 }
 
-/* .member-miembros{
+.member-miembros{
     margin-right:110px;
-} */
+}
 
 .miembros-miembros h2{
     margin-top:51px;
@@ -79,9 +85,9 @@
   margin-top:50px;
 }
 
-.add-miembro:hover{
-  
-}
+
+
+
 
 .link-miembros {
   text-decoration: none;
@@ -125,6 +131,7 @@
 
 .container-docs label{
   font-weight:bold;
+  
   
 }
 

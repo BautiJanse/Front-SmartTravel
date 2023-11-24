@@ -14,7 +14,9 @@
     position:fixed;
     top:0;
     left:0;
-    width:93%;
+    width:414px;
+    height:65px;
+
 
     display:flex;
     justify-content: space-between;
@@ -24,6 +26,9 @@
     font-weight: bold;
 }
 
+.header-destinos .miembros{
+  margin-right:50px;
+}
 
 .add-documentos{
     margin-top:30px;
@@ -45,6 +50,7 @@
     text-decoration: none;
     color:black;
     font-size:27px;
+    font-family: lora;
 }
 
 .p-style1{
