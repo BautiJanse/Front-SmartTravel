@@ -40,7 +40,7 @@ export const Miembros = () => {
         <a href="/Home" className="icon"></a>
       </header>
 
-      <section className="lista-miembros" miembroId="section-a">
+      <section className="lista-miembros" id="section-a">
         <h1 className="title-miembros">Lista de miembros</h1>
         {miembros.map((miembro) => (
           <div className="container-miembros" key={miembro.miembroId}>

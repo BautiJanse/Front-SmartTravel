@@ -163,6 +163,7 @@
     border-radius:10px;
     line-height: 37px;
     text-align:center;
+    font-size:10px;
     
 }
 
@@ -206,6 +207,37 @@
     border-radius: 0 0 20px 20px; /* Aplicar esquinas redondeadas solo en la parte inferior */
 }
 
+.box-viaje{
+    
+    width: 360px;
+    height: 219px;
+    background-color: #EBEBEB;
+    margin-top: 24px;
+    border-radius: 20px;
+    
+    
+}
+
+.box-viaje img {
+    border: 1px solid #e7e7e7;
+    flex: 1.7; /* Esto hará que la imagen ocupe todo el espacio disponible en altura */
+    border-radius: 20px 20px 0 0; /* Aplicar esquinas redondeadas solo en la parte superior */
+}
+
+.box-viaje p {
+    flex: 1; /* Esto hará que el párrafo ocupe todo el espacio disponible en altura */
+    margin: 0; /* Eliminar el margen predeterminado del párrafo */
+    text-align: center; /* Centrar el texto */
+    line-height: 50px;
+    font-size:18px;
+    font-family: inter;
+    border: 1px solid #e7e7e7;
+    background-color: white;/* Fondo blanco para la parte inferior */
+    border-radius: 0 0 20px 20px; /* Aplicar esquinas redondeadas solo en la parte inferior */
+}
+
+
+
 .flex p{
     font-family: inter;
     
@@ -219,6 +251,7 @@
     border-radius:10px;
     line-height: 37px;
     text-align:center;
+    font-size:10px;
 }
 
 .box p{
@@ -233,11 +266,54 @@
     font-style: bold;
 }
 
+.viaje-header{
+    top:0;
+    left:0;
+    width:414px;
+    height:65px;
+
+    text-align: center;
+
+    
+    padding:15px 15px;
+    font-weight:bold;
+    background-color: rgba(255, 255, 255, 0.336);
+    border-bottom: solid 1px #EEEE;
+}
+
+.viaje-header a{
+    margin-left:30px;
+}
+
+.container-content{
+    margin-left:26px;
+    
+}
+
+.container-content p{
+    margin-top:34px;
+    font-family: inter;
+    font-size:14px;
+    color:#b7b7b7a9;
+    
+    
+}
+
+
+.viaje-header a{
+    font-weight: 500;
+    font-size:24px;
+}
+
 .container-box{
     display:flex;
     gap:10px;
     height:142px;
     width: 381px;
+}
+
+.container-box-viaje{
+    margin-left:26px;
 }
 
 .usuarios{
@@ -255,6 +331,28 @@
     font-size:18px;
 }
 
+.agregar-viaje{
+    background-color: #F3F3F3;
+    width: 360px;
+    height: 56px;
+    border-radius:30px;
+    text-align: center;
+    line-height: 51px;
+    margin-top:15px;
+    color:white;
+    margin-top:60px;
+    border:dashed 2px #ACACAC;
+}
+
+.agregar-viaje p{
+    font-family: inter;
+    letter-spacing:1px;
+    font-size:18px;
+    color:#ACACAC;
+    
+}
+
+
 .gastos{
     background-color: #D0CBFF;
     width: 350px;
@@ -266,6 +364,8 @@
     color:white;
     
 }
+
+
 
 .gastos p{
     font-family: inter;
