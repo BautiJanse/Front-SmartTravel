@@ -46,6 +46,7 @@ export const Miembros = () => {
           <div className="container-miembros" key={miembro.miembroId}>
             <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
             <p className="member-miembros">{miembro.nombre}</p>
+            <p className="member-balance">{miembro.balance}$</p>
             <button className="eliminar-miembro" onClick={() => handleEliminarMiembro(miembro.miembroId)}>Eliminar</button>
           </div>
         ))}

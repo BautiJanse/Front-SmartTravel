@@ -40,51 +40,27 @@ export const AgregarMiembro = () => {
     
   return (
     <div>
-
-<header className="header-miembros">
-  <Link to="/Miembros">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-      </Link>
-      <a href="/" className="miembros">Miembros</a>
-      <a href="/" className="icon"></a>
-    </header>
-        {/* <h3>Agregar Miembro</h3>
-
-        <form onSubmit={handleSubmit}>
-
-            <input type="text" placeholder="Ingresa el nombre" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
-
-            <input type="text" placeholder="Ingresa el mail"  value={email} onChange={(e) => setEmail(e.target.value)}/>
-
-            <button type="submit">Agregar Usuario</button>
-
-        </form>
-
+      <header className="header-miembros">
         <Link to="/Miembros">
-            <button>Volver</button>
-        </Link>  */}
-         <section className="lista-miembros2" id="section-a">
-    <div className="form1-destinos">
-      <form onSubmit={handleSubmit}>
+            <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+        </Link>
+        <a href="/" className="miembros">Miembros</a>
+        <a href="/" className="icon"></a>
+      </header>
 
-        <p className="p-style1">Nombre de Usuario</p>
+      <section className="lista-miembros2" id="section-a">
+        <div className="form1-destinos">
+          <form onSubmit={handleSubmit}>
+            <p className="p-style1">Nombre de Usuario</p>
 
             <input type="text" placeholder="" value={nombre} onChange={(e) => setNombre(e.target.value)}/>
               <p className="p-style">Email</p>
             <input type="text" placeholder=""  value={email} onChange={(e) => setEmail(e.target.value)}/>
-              
-            
 
             <button type="submit" className='add-destino'>Confirmar Miembro</button>
-
-        </form>
-        {/* {mensaje && <p className="mensaje">{mensaje}</p>} */}
+          </form>
         </div>
-
-</section> 
-        
-
-        
+      </section>  
     </div>
   )
 }
