@@ -57,8 +57,8 @@ export const Miembros = () => {
           </div>
         </Link>
 
-        <Link to="/Miembros/CrearEncuesta">
-          <button className="add-miembro">Crear Encuesta</button>
+        <Link to="/Miembros/Encuestas">
+          <button className="add-miembro">Ver Encuestas</button>
         </Link>
 
       </section>
