@@ -21,8 +21,13 @@ export const VerEncuestas = () => {
         }
     }   
 
-    const handleEliminarEncuesta = async () => {
-
+    const handleEliminarEncuesta = async (id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8080/encuestas/${id}`)
+            window.location.reload(true)
+        } catch (error) {
+            
+        }
     }
 
     const handleUrlEncuesta = async (formsId) => {
@@ -36,9 +41,20 @@ export const VerEncuestas = () => {
 
     const handleRespuestasEncuesta = async (formsId) => {
         try {
+            const response = await axios.get(`http://localhost:8080/encuestas/rtas/${formsId}`)
+            const dic = response.data
+            const llaves =  Object.keys(dic)
+            const final = []
+            var respuesta
 
-        } catch (error) {
+            llaves.map((llave) => {
+                respuesta = llave.slice(3)    
+                final.push(respuesta + " : " + dic[llave] + "\n") 
+            })
             
+            window.alert(final)
+        } catch (error) {
+            console.log("Error buscando el url", error)
         }
     }
     
@@ -50,14 +66,14 @@ export const VerEncuestas = () => {
                 <a href="/Home" className="icon"></a>
             </header>
 
-            <section className="lista-miembros" /* encuestaId="section-a" */>
+            <section className="lista-miembros" id="section-a">
                 <h1 className="title-miembros">Lista de Encuestas</h1>
                 {encuestas.map((encuesta) => (
                 <div className="container-miembros" key={encuesta.encuestaId}>
                     <p className="member-miembros">{encuesta.pregunta}</p>
-                    <button className="eliminar-miembro"  onClick={() => handleEliminarEncuesta(encuesta.encuestaId)}>Eliminar</button>
                     <button className="eliminar-miembro"  onClick={() => handleUrlEncuesta(encuesta.fomsId)}> Url </button>
-                    <button className="eliminar-miembro"  onClick={() => handleRespuestasEncuesta(encuesta.encuestaId)}>Respuestas</button>
+                    <button className="eliminar-miembro"  onClick={() => handleRespuestasEncuesta(encuesta.fomsId)}>Respuestas</button>
+                    <button className="eliminar-miembro"  onClick={() => handleEliminarEncuesta(encuesta.encuestaId)}>Eliminar</button>
                 </div>
                 ))}
 
