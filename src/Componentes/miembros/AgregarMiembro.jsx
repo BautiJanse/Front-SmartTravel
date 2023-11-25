@@ -26,7 +26,7 @@ export const AgregarMiembro = () => {
         } 
         try {
                      
-            await axios.post('http://localhost:8080/miembro', {nombre,email});
+            await axios.post('http://localhost:8080/miembro', {nombre,email, idViaje:sessionStorage.getItem("viajeId") });
             console.log('Datos enviados correctamente');
             setMensaje('Miembro agregado correctamente');
             window.alert('Miembro agregado correctamente!');
