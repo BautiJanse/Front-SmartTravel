@@ -18,7 +18,7 @@ useEffect(() => {
   async function fetchUsuarios() {
     console.log(usuarios);
     try {
-      const response = await axios.get('http://localhost:8080/miembro');
+      const response = await axios.get(`http://localhost:8080/miembro/viaje/${sessionStorage.getItem("viajeId")}`);
       setUsuarios(response.data);
     } catch (error) {
       console.error('Error al obtener usuarios:', error);
