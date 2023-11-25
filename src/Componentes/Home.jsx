@@ -6,10 +6,12 @@ import '../Styles/home.css';
 export const Home = () => {
   const [destino, setDestino] = useState('')
   const [fecha, setFecha] = useState('')
+  const [nombreViaje, setNombreViaje] = useState('')
 
   sessionStorage.setItem("viajeId", 1)  // esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
 
   useEffect(() => {
+    getNombreViaje();
     getDestinoFinal();
     getDiasFinal();
   },[])
@@ -33,6 +35,15 @@ export const Home = () => {
     }
   }
 
+  const getNombreViaje = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/viaje/${sessionStorage.getItem("viajeId")}`)
+      setNombreViaje(response.data.nombreViaje)
+    } catch (error) {
+      console.error('Error al obtener Viaje:', error);
+    }
+  }
+
   const getFecha = (fecha) =>{
       if(fecha === null || fecha === 0 || fecha === undefined){
           return null
@@ -46,77 +57,31 @@ export const Home = () => {
   return (
 
     <div>
-       {/*  <div>
-      <header className="header-home">
-        <a to="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
-        <a href="/" className="viaje">Viaje</a>
-        <a href="/" className="icon"></a>
-      </header>
-
-<div className="new-container">
-
-      <section className="resumen-home" id="section-a">
-        <div className="contain">
-          <h1>Resumen</h1>
-          <p>Destino/s: {destino} <br />Fechas: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)} <br /></p>
-        </div>
-      </section>
-
-      <section className="content-home" id="section-b">
-        <div className="wrapper-home">
-          <NavLink to="/Destino" className="box-home">
-            <p>Destino</p>
-          </NavLink>
-
-          <NavLink to="/Documentos" className="box-home">
-            <p>Documentos</p>
-          </NavLink>
-
-          <NavLink to="/Miembros" className="box-home">
-            <p>Miembros</p>
-          </NavLink>
-
-          <NavLink to="/Actividades" className="box-home">
-            <p>Actividades</p>
-          </NavLink>
-        </div>
-
-        <NavLink to="/Gastos" className="gastos-home">
-          <p>Gastos</p>
-        </NavLink>
-      </section>
-    </div>
-    </div> */}
-    <section className="second-section" id="section-b">
-
-<header className="home-header">
-<a to="/" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
-        <a href="/" className="viaje">Viaje</a>
-        <a href="/" className="icon"></a>
-            </header>
-
-            
-              
-
-           </section> 
+      <section className="second-section" id="section-b">
+        <header className="home-header">
+          <a to="/" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
+          <a href="/" className="viaje">Viaje</a>
+          <a href="/" className="icon"></a>
+        </header>
+      </section> 
 
 
-<section className="first-section" id="section-a">
-  <div className="container-section1">
-  <p className="resumen">Resumen</p>
-  
-  <h1 className="h1">Cumple 25 De Juli</h1>
-  <div className="flex">
-  <p className="destino">Destino: {destino}</p>
-  <p className="fecha">Fecha: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)}</p>
-  </div>
+      <section className="first-section" id="section-a">
+        <div className="container-section1">
+          <p className="resumen">Resumen</p>
+        
+          <h1 className="h1">{nombreViaje}</h1>
+          <div className="flex">
+            <p className="destino">Destino: {destino}</p>
+            <p className="fecha">Fecha: {getFecha(fecha.fechaInicio)} - {getFecha(fecha.fechaFin)}</p>
+          </div>
 
   
 <div className="container-box">
 <NavLink to="/Destino" >
   <div className="box">
   <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
-  <p>Destino {destino}</p>
+  <p>Destino</p>
   </div>
   </NavLink>
 
