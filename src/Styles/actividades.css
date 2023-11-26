@@ -66,3 +66,20 @@
     font-weight: bold;   
 }
 
+/*       AGREGAR ACTIVIDADES       */
+
+.add-actividad-btn{
+    margin-top:30px;
+    border-radius: 20px;
+    background-color: #D0CBFF;
+    background-size:cover;
+    background-position:center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height:49px;
+    width: 90%;
+    font-size:15px;
+    font-weight: bold;
+    margin-top:50px;
+}

@@ -48,7 +48,7 @@ export const AgregarActividad = () => {
   return (
     <div>
 
-<header className="header-miembros">
+<header className="header-actividades">
       <Link to="/Actividades">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
@@ -90,7 +90,7 @@ export const AgregarActividad = () => {
 
             
 
-            <button type="submit" className='add-destino'>Agregar Actividad</button>
+            <button type="submit" className='add-actividad-btn'>Agregar Actividad</button>
 
             
         </form>
