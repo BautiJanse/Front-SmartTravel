@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 
@@ -11,6 +11,7 @@ export const AgregarGasto = () => {
     const [importe, setImporte] = useState('')
     const [gastos, setGastos] = useState([])
 
+    const nav = useNavigate()
 
     const [usuarios, setUsuarios] = useState([]);
 
@@ -46,6 +47,8 @@ const handleSubmit = async (e) => {
     try {
       await axios.post('http://localhost:8080/gasto', nuevoGasto);
       console.log('Datos enviados correctamente');
+      nav("/Gastos")
+
     } catch (error) {
       console.error('Error al enviar datos:', error);
     }
@@ -75,6 +78,7 @@ const handleSubmit = async (e) => {
             
 
             <select className="select-miembro" name="miembro" placeholder="elegir.." value={miembro} onChange={(e) => setMiembro(e.target.value)}>
+                <option value=''></option>
                 {usuarios.map((usuario) => (
                   <option key={usuario.miembroId} value={usuario.miembroId}>
                     {usuario.nombre}
