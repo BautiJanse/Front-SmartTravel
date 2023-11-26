@@ -35,7 +35,7 @@
 
 .lista-miembros h1{
     margin-top:116px;
-    margin-left:46px;
+    margin-left:35px;
 
     font-weight: bold;
 }
@@ -53,10 +53,10 @@
   display: flex;
   align-items: center;
   margin-top: 19px;
-  width: 100%; /* Hacer el contenedor ancho al 100% */
-  max-width: 400px; /* Establecer un ancho máximo para evitar que se extienda demasiado */
+  max-width: 360px;
   font-size: 17px;
-  margin-left: 46px;
+  margin-left: 25px;
+  width: 100%;
 }
 
 .container-miembros {
