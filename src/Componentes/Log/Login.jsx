@@ -15,18 +15,20 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // Hacer la llamada a la API para autenticar al usuario
+
       const response = await axios.get('http://localhost:8080/usuario/'+nombreUs+'/'+contraseña);
         
       if (response.status == 200) {
         sessionStorage.setItem("usuarioId", response.data.usuarioId)
         navigate('/Viaje');
       } else { 
+        alert("El usuario y/o la contraseña son incorrectos.");
         console.log('Autenticación fallida');
         console.log(response.status)
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
+      alert("El usuario y/o la contraseña son incorrectos.");
     }
   };
 

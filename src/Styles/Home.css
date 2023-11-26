@@ -67,13 +67,12 @@
 
 .box-home{
     border-radius: 20px;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.445),rgba(0,0,0,0.75)),url(../../public/planeasd.jpg); */
     background-color: #D0CBFF;
     background-size:cover;
     background-position:center;
-    display: flex; /* Aplicar flexbox para centrar contenido */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
    
     height:209px;
     width:174px;
@@ -82,7 +81,6 @@
     font-size:20px;
     text-decoration: none;
     transition:0.4s;
-    /* color:rgba(255, 255, 255, 0.685); */
     color:black;
 
     
@@ -95,23 +93,16 @@
     
 }
 
-
-/* .new-container{
-    
-} */
-
-
 .logout-button {
     background: none;
     border: none;
-    font-size: 30px;
+    font-size: 35px;
     color: black;
     cursor: pointer;
     position: absolute;
-    top: 11px;
-    right: 370px;
+    top: 10px;
+    left: 10px; 
 }
-
 
 .gastos-home{
     margin-top:40px;
@@ -119,9 +110,9 @@
     background-color: #D0CBFF;
     background-size:cover;
     background-position:center;
-    display: flex; /* Aplicar flexbox para centrar contenido */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
 
     height:58px;
     width:351px;
