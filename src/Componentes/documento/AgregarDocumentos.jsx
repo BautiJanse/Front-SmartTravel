@@ -25,7 +25,7 @@ export const AgregarDocumentos = () => {
     const formData = new FormData();
     formData.append("file", documento);
     
-    await axios.post("http://localhost:8080/documento/1/"+tipoDocumento, formData);
+    await axios.post("http://localhost:8080/documento/3/"+tipoDocumento, formData);
     console.log("Datos enviados correctamente");
 
     setDocumento(null);
