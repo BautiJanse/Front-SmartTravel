@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const AgregarDocumentos = () => {
   const [tipoDocumento, setTipoDocumento] = useState("");
-  // const [tituloDocumento, setTituloDocumento] = useState("");
+
   const [documento, setDocumento] = useState(null);
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export const AgregarDocumentos = () => {
     const formData = new FormData();
     formData.append("file", documento);
     
-    await axios.post("http://localhost:8080/documento/3/"+tipoDocumento, formData);
+    await axios.post(`http://localhost:8080/documento/${sessionStorage.getItem("viajeId")}/`+tipoDocumento, formData);
     console.log("Datos enviados correctamente");
 
     setDocumento(null);
