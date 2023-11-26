@@ -46,7 +46,7 @@ export const Gastos = () => {
       <h1 className="title-miembros">Lista de gastos</h1>
       {gastos.map((gasto) => (
           <div className="container-miembros" key={gasto.id}>
-            <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
+            <p className="user-icon-miembros"><i class='bx bx-money'></i></p>
             <p className="member-miembros">{gasto.nombreGasto}</p>
             <p className="member-balance">{gasto.monto}$</p>
             <button className="eliminar-miembro" onClick={() => handleEliminarGasto(gasto.gastoID)}>Eliminar</button>
