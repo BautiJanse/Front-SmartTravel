@@ -42,15 +42,13 @@ export const Destino = () => {
 
   return (
     <div>
-      <header className="header-destinos">
-        <Link to="/Home" className="go-back">
-          <i className='bx bx-chevron-left'></i>
-        </Link>
-        <Link to="/Home" className="miembros">
-          Destinos
-        </Link>
-        <Link to="/Home" className="icon"></Link>
-      </header>
+      <header className="header-documentos">
+      <Link to="/Destino">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
+      <a href="/" className="documentos">Destinos</a>
+      <a href="/" className="icon"></a>
+    </header>
 
       <section className="lista-miembros2" id="section-a">
         <div className="form1-destinos">

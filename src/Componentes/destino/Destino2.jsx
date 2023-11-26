@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../../Styles/destinos.css';
+import '../../Styles/destino.css';
 
 const Destinos2 = () => {
   const [destinos, setDestinos] = useState([]);
@@ -38,14 +38,15 @@ const Destinos2 = () => {
 
   return (
     <div>
-      <header className="header-destinos">
-        <Link to="/Home" className="go-back">
-          <i className='bx bx-chevron-left'></i>
-        </Link>
-        <Link to="/Destino" className="miembros">
-          Destinos
-        </Link>
-      </header>
+      <header className="header-documentos">
+      <Link to="/Home">
+      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+      </Link>
+      <a href="/" className="documentos">Destinos</a>
+      <a href="/" className="icon"></a>
+    </header>
+
+    <div className='container-destination'>
 
       <div className="fila">
         <table className="tablaDestinos">
@@ -73,9 +74,10 @@ const Destinos2 = () => {
           </tbody>
         </table>
       </div>
+      </div>
 
       <Link to="/AgregarDestino">
-        <button className='add-destino'>Agregar Destino</button>
+        <button className='add-destino2'>Agregar Destino</button>
       </Link>
     </div>
   );

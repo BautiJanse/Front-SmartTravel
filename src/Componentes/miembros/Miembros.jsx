@@ -35,12 +35,11 @@ export const Miembros = () => {
   return (
     <div>
       <header className="header-miembros">
-        <Link to="/Home" className="go-back">
-          <i className='bx bx-chevron-left'></i>
+        <Link to="/Home">
+            <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
         </Link>
-        <Link to="/Miembros" className="miembros">
-          Miembros
-        </Link>
+        <a href="/" className="miembros">Miembros</a>
+        <a href="/" className="icon"></a>
       </header>
 
       <section className="lista-miembros" id="section-a">

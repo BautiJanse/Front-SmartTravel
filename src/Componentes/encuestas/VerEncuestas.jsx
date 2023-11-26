@@ -60,9 +60,9 @@ export const VerEncuestas = () => {
     
     return ( 
         <div>
-            <header className="header-miembros">
+            <header className="header-encuestas">
                 <a href="/Miembros" className="go-back"><i className='bx bx-chevron-left'></i></a>
-                <a href="/Home" className="miembros">Encuestas</a>
+                <a href="/Home" className="encuestas">Encuestas</a>
                 <a href="/Home" className="icon"></a>
             </header>
 

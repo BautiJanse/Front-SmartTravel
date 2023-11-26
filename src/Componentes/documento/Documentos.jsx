@@ -84,11 +84,11 @@ export const Documentos = () => {
 
   return (
     <>
-      <header className="header-miembros">
+      <header className="header-documentos">
         <a href="/Home" className="go-back">
           <i className="bx bx-chevron-left"></i>
         </a>
-        <a href="/Home" className="miembros">
+        <a href="/Home" className="documentos2">
           Documentos
         </a>
         <a href="/Home" className="icon"></a>

@@ -37,11 +37,11 @@ export const AgregarDocumentos = () => {
 
   return (
     <>
-      <header className="header-miembros">
+      <header className="header-documentos">
       <Link to="/Documentos">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="miembros">Documentos</a>
+      <a href="/" className="documentos">Documentos</a>
       <a href="/" className="icon"></a>
     </header>
 

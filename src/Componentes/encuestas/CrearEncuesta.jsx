@@ -27,11 +27,11 @@ export const CrearEncuesta = () => {
     
     <div>
 
-      <header className="header-miembros">
+      <header className="header-encuestas">
       <Link to="/Miembros/Encuestas">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="miembros">Encuestas</a>
+      <a href="/" className="encuestas">Encuestas</a>
       <a href="/" className="icon"></a>
       </header>
 

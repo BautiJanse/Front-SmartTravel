@@ -75,7 +75,6 @@ const handleSubmit = async (e) => {
             
 
             <select className="select-miembro" name="miembro" placeholder="elegir.." value={miembro} onChange={(e) => setMiembro(e.target.value)}>
-                <option value={''}></option>
                 {usuarios.map((usuario) => (
                   <option key={usuario.miembroId} value={usuario.miembroId}>
                     {usuario.nombre}
@@ -104,7 +103,7 @@ const handleSubmit = async (e) => {
 
         </div>
 
-            <button type="submit" className='add-destino'>Confirmar gasto</button>
+            <button type="submit" className='add-destinos'>Confirmar gasto</button>
 
         </form>
 
