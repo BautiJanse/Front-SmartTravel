@@ -77,9 +77,9 @@ const Login = () => {
               />
               <label htmlFor="rememberMe">Recuérdame</label>
             </div>
-            <Link /* to="/ForgotPassword" */ className="text-blue-500 ml-2"> {/* despues vemos */}
+            {/* <Link to="/ForgotPassword" className="text-blue-500 ml-2"> despues vemos
               Recuperar Contraseña
-            </Link>
+            </Link> */}
           </div>
           <button
             type="submit"
