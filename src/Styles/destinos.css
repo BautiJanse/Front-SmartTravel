@@ -33,6 +33,22 @@
   margin-top: 50px;
 }
 
+
+.add-respuesta {
+    border-radius: 10px;
+    background-color: #D0CBFF;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 49px;
+    width: 90%;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
 .eliminar-destino {
     border-radius: 20px;
     background-color: #D0CBFF;
