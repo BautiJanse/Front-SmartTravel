@@ -50,21 +50,28 @@
 }
 
 .container-miembros {
-    display: flex;
+  display: flex;
+  align-items: center;
+  margin-top: 19px;
+  width: 100%; /* Hacer el contenedor ancho al 100% */
+  max-width: 400px; /* Establecer un ancho máximo para evitar que se extienda demasiado */
+  font-size: 17px;
+  margin-left: 46px;
+}
 
-    align-items: center;
-    margin-top:19px;
-    width:323px;
-    height:29px;
-    margin-left:46px;
-    font-size: 17px;
-  }
+.container-miembros {
+  width: 100%;
+}
+
+
   .user-icon-miembros{
     font-size:30px;
 }
 
-.member-miembros{
-    margin-right:110px;
+.member-miembros {
+  white-space: nowrap; /* Evitar que el texto se desborde a la siguiente línea */
+  overflow: hidden; /* Ocultar cualquier contenido que desborde */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) si el texto se desborda */
 }
 
 .miembros-miembros h2{
@@ -77,7 +84,7 @@
 
 .add-miembro{
   margin-top:30px;
-  margin-left:20px;
+  margin-left:10px;
   border-radius: 20px;
   background-color: #D0CBFF;
   background-size:cover;
@@ -115,6 +122,10 @@
   font-size:15px;
   font-weight: bold;
   
+}
+
+.eliminar-miembro {
+  height: 2em; /* Usar tamaños relativos en lugar de tamaños fijos */
 }
 
 .lista-documentos h1{
