@@ -103,7 +103,7 @@ const handleSubmit = async (e) => {
 
         </div>
 
-            <button type="submit" className='add-destinos'>Confirmar gasto</button>
+            <button type="submit" className='add-destinogit '>Confirmar gasto</button>
 
         </form>
 
