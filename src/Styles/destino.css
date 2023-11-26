@@ -119,6 +119,17 @@
     font-weight: bold;
 }
 
+.add-respuesta{
+  margin-top:30px;
+  border-radius: 20px;
+  background-color: #D0CBFF;
+  border-color:#D0CBFF;
+  height:49px;
+  width:162px;
+  font-size:15px;
+  font-weight: bold;
+}
+
 /* Estilo para el contenedor de la lista desplegable */
 .container-miembros {
   margin-bottom: 20px;

@@ -59,7 +59,7 @@ export const CrearEncuesta = () => {
             />
           </div>
         ))}
-        <button onClick={agregarRespuesta} className='add-destino'>Agregar Respuesta</button>
+        <button onClick={agregarRespuesta} className='add-respuesta'>Agregar Respuesta</button>
         </div>
       </div>
       </div>
