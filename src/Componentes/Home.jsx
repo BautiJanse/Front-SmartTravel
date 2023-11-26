@@ -8,7 +8,7 @@ export const Home = () => {
   const [fecha, setFecha] = useState('')
   const [nombreViaje, setNombreViaje] = useState('')
 
-  sessionStorage.setItem("viajeId", 1)  // esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
+  //sessionStorage.setItem("viajeId", 1)  esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
 
   useEffect(() => {
     getNombreViaje();

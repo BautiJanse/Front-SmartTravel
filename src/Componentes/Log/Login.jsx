@@ -19,7 +19,8 @@ const Login = () => {
       const response = await axios.get('http://localhost:8080/usuario/'+nombreUs+'/'+contraseña);
         
       if (response.status == 200) {
-        navigate('/Home');
+        sessionStorage.setItem("usuarioId", response.data.usuarioId)
+        navigate('/Viaje');
       } else { 
         console.log('Autenticación fallida');
         console.log(response.status)

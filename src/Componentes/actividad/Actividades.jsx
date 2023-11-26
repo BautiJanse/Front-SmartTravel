@@ -22,9 +22,9 @@ export const Actividades = () => {
   };
 
   const buscarFecha = (fecha) =>{
-      const date = new Date(fecha + (1 * 24 * 60 * 60 * 1000)) // LE AGREGO UN DIA PORQ SE GUARDA UN DIAS MENOS EN EL BACKEND
-      
-      return date.toLocaleDateString();
+    const date = new Date(fecha + (1 * 24 * 60 * 60 * 1000))
+    
+    return date.toLocaleDateString();
   }
 
   const eliminar = async (id) =>{

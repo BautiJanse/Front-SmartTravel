@@ -38,7 +38,9 @@ export const TravelApp = () => {
         <Route path="/Documentos/AgregarDocumentos" element={<AgregarDocumentos></AgregarDocumentos>}></Route>
         <Route path="/Miembros/CrearEncuesta" element={<CrearEncuesta></CrearEncuesta>}></Route>
         <Route path="/Miembros/Encuestas" element={<VerEncuestas></VerEncuestas>}></Route>
+        
         <Route path="/*" element={<App></App>}> </Route>
+        
         <Route path="/Viaje" element={<Viaje></Viaje>}></Route>
         <Route path="/AgregarViaje" element={<AgregarViaje></AgregarViaje>}></Route>
       </Routes>
