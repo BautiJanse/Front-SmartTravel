@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 
 *{
@@ -9,7 +10,8 @@
     /*font-family:'Noto Sans', sans-serif;*/
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
-    
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .header-home{
@@ -144,7 +146,8 @@
 }
 
 .home-header a{
-    font-family: lora;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .container-section1{
@@ -154,7 +157,8 @@
 .resumen{
    color:rgba(128, 128, 128, 0.685);
     margin-top:25px;
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .destino{
@@ -259,7 +263,8 @@
     text-align: center; /* Centrar el texto */
     line-height: 50px;
     font-size:18px;
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     border: 1px solid #e7e7e7;
     background-color: white;/* Fondo blanco para la parte inferior */
     border-radius: 0 0 20px 20px; /* Aplicar esquinas redondeadas solo en la parte inferior */
@@ -268,19 +273,22 @@
 
 
 .flex p{
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     
 }
 
 
 
 .box p{
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .h1{
    
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     margin-top:4px;
     font-size:32px;
     font-style: bold;
@@ -331,7 +339,8 @@
 
 .container-content p{
     margin-top:34px;
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size:14px;
     color:#b7b7b7a9;
     
@@ -340,13 +349,15 @@
 
 
 .viaje-header a{
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size:24px;
 }
 
 
 .viaje-header2 a{
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size:24px;
 }
 
@@ -369,7 +380,8 @@
 
 
 .usuarios p {
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size:18px;
 }
 
@@ -387,7 +399,8 @@
 }
 
 .agregar-viaje p{
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     letter-spacing:1px;
     font-size:18px;
     color:#ACACAC;
@@ -403,7 +416,6 @@
 .gastos{
     background-color: #D0CBFF;
     width: 93%;
-    
     border-radius:30px;
     text-align: center;
     line-height: 56px;
@@ -415,9 +427,11 @@
 
 
 .gastos p{
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     letter-spacing:1px;
     font-size:18px;
+    color: black;
 }
 
 .second-section {

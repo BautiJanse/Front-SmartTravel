@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 .header-actividades{
     position:fixed;
     top:0;
@@ -11,6 +13,8 @@
   
     padding:25px 15px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     border-bottom: solid 1px #EEEE;
 }
 
@@ -23,7 +27,9 @@
     text-decoration: none;
     color:black;
     font-size:27px;
-    font-family: lora;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    
 }
 
 .tablaActividades{
@@ -49,8 +55,10 @@
     width: 90%;
     font-size:15px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     margin-top:50px;
-    font-family: inter;
+
 }
 
 .eliminar-actividad{
@@ -65,7 +73,9 @@
   
     
     font-size:15px;
-    font-weight: bold;   
+    font-weight: bold;  
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; 
 }
 
 /*       AGREGAR ACTIVIDADES       */
@@ -84,5 +94,6 @@
     font-size:15px;
     font-weight: bold;
     margin-top:50px;
-    font-family: inter;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }

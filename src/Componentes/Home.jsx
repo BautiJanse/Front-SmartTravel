@@ -62,7 +62,7 @@ export const Home = () => {
           <NavLink to="/Viaje">
             <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
           </NavLink>
-          <a className="viaje">Viaje</a>
+          <a className="viaje">Smart Travel</a>
           <a className="icon"></a>
         </header>
       </section> 

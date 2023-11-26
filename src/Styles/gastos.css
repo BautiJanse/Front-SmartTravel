@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 *{
     margin:0;
@@ -8,6 +8,8 @@
     /*font-family:'Noto Sans', sans-serif;*/
     box-sizing: border-box;
     font-family: 'Merriweather', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     
 }
 
@@ -23,6 +25,8 @@
 
     padding:25px 15px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .header-gastos a{
@@ -36,6 +40,8 @@
     margin-left:46px;
     font-size:20px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .container-gastos {
@@ -47,9 +53,13 @@
     height:29px;
     margin-left:46px;
     font-size: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
   }
   .user-icon-gastos{
     font-size:30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
 .member-gastos{
@@ -62,4 +72,6 @@
     margin-left:46px;
     font-size: 20px;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
