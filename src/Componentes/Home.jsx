@@ -59,7 +59,7 @@ export const Home = () => {
     <div>
       <section className="second-section" id="section-b">
         <header className="home-header">
-          <a to="/" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
+          <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
           <a href="/" className="viaje">Viaje</a>
           <a href="/" className="icon"></a>
         </header>

@@ -431,3 +431,24 @@
 
 
 }
+
+/*        COSAS DE VAIJE         */
+
+.tituloViaje{
+    width: 100%;
+}
+
+.delete{
+    width: 100%;
+    height: 100%;
+    display: inline;
+    float: right;
+}
+
+.trViaje{
+    width: 100%;
+}
+
+.tableViaje{
+    width: 100%;
+}

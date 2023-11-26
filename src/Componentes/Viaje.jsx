@@ -26,6 +26,15 @@ export const Viaje = () => {
         nav("/Home")
     }
 
+    const handleDelete = async (id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8080/viaje/${id}`)
+            window.location.reload(true)
+        } catch (error) {
+            console.log("ERROR", error)
+        }
+    }
+
     return (
 
         <div>
@@ -39,19 +48,21 @@ export const Viaje = () => {
             </div>
 
             <div className="container-box-viaje">
-                {/* <div className="box-viaje">
-                    <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
-                    <p>{viaje[0].nombreViaje}</p>
-                </div> */}
 
                 {viajes.map((viaje) => (  
-                    <div className="box-viaje" type="button" key={viaje.viajeId} onClick={() => handleClick(viaje.viajeId)} >
-                        <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
-                        <p>{viaje.nombreViaje}</p>
+                    <div className="box-viaje" key={viaje.viajeId} >
+                        <img src="public/sonar-montanasjpg.webp" alt="Imagen" type="button" onClick={() => handleClick(viaje.viajeId)}/>
+                        <table className="tableViaje">
+                            <tr className="trViaje">
+                                <td><p className="tituloViaje" type="button" onClick={() => handleClick(viaje.viajeId)}>{viaje.nombreViaje}</p></td>
+                                <td><button className="delete" type="button" onClick={() => handleDelete(viaje.viajeId)}><i class='bx bx-trash-alt'></i></button></td>
+                            </tr>
+                        </table>
+                        {/* <p>{viaje.nombreViaje}</p> */}
                     </div> 
                 ))} 
 
-                <div className="agregar-viaje">
+                <div className="agregar-viaje" onClick={() => nav("/AgregarViaje") }>
                     <p className="letra-viaje">Agregar Viaje </p>
                 </div>
             </div>
