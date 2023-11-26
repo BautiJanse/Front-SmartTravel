@@ -16,7 +16,10 @@
 
 .header-miembros .miembros{
   margin-right: 30px; 
+  
 }
+
+
 
 .header-documentos{
   position:fixed;
@@ -102,6 +105,12 @@
 .title-miembros{
   color:gray;
   font-size:15px;
+  font-family:inter;
+  
+}
+
+th, td, .add-miembro, .add-miembro p{
+  font-family: inter;
 }
 
 .member-miembros{
@@ -208,7 +217,7 @@
 
 .container-docs label{
   font-weight:bold;
-  
+  font-family:inter;
   
 }
 
@@ -220,9 +229,15 @@
   margin-top:7px;
 }
 
+.container-miembros p, .container-miembros .eliminar-miembro, .add-destino2{
+  font-family:inter;
+}
+
 .container-label input{
   margin-top:7px;
 }
+
+
 
 .container-label{
   margin-top:25px;

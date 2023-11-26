@@ -79,7 +79,7 @@
   width: 80%;
   font-size:15px;
   font-weight: bold;
-  
+  font-family: inter;
 }
 .header-destinos a{
     text-decoration: none;
@@ -90,6 +90,7 @@
 
 .p-style1{
     margin-top:100px;
+    font-family:inter;
 }
 
 .p-style2{
@@ -113,8 +114,11 @@
     margin-bottom:15px;
 }
 
+
+
 .p-style{
     margin-top: 20px;
+    font-family:inter;
 }
 
 .form1-destinos input, .form2-destinos input{
@@ -152,6 +156,7 @@
     width:162px;
     font-size:15px;
     font-weight: bold;
+    font-family:inter;
 }
 
 .add-destino2 {
@@ -171,6 +176,8 @@
   margin-top: 50px;
 }
 
+
+
 .add-respuesta {
   border-radius: 10px;
   background-color: #D0CBFF;
@@ -184,6 +191,7 @@
   font-size: 15px;
   font-weight: bold;
   margin-top: 50px;
+  font-family:inter;
 }
 
 .eliminar-destino {
