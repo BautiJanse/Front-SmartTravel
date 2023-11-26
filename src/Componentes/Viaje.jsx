@@ -51,9 +51,11 @@ export const Viaje = () => {
                     </div> 
                 ))} 
 
+                <NavLink to="/AgregarViaje">
                 <div className="agregar-viaje">
                     <p className="letra-viaje">Agregar Viaje </p>
                 </div>
+                </NavLink>
             </div>
         </div>
     )

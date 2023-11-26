@@ -10,10 +10,10 @@ export const AgregarViaje = () => {
 
         <div>
           
-            <header className="viaje-header">
-              
+            <header className="viaje-header2">
+              <NavLink to="/Viaje">
               <a href="/" className="viaje">Smart Travel</a>
-              
+              </NavLink>
             </header>
 
             <section className="lista-miembros2" id="section-a">
