@@ -62,9 +62,11 @@ export const Viaje = () => {
                     </div> 
                 ))} 
 
-                <div className="agregar-viaje" onClick={() => nav("/AgregarViaje") }>
+                <NavLink to="/AgregarViaje">
+                <div className="agregar-viaje">
                     <p className="letra-viaje">Agregar Viaje </p>
                 </div>
+                </NavLink>
             </div>
         </div>
     )

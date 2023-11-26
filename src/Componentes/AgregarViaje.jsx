@@ -21,8 +21,8 @@ export const AgregarViaje = () => {
         <div>
           
             <header className="viaje-header">
-                <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
-                <a href="/" className="viaje">Smart Travel</a>
+              
+              <a href="/Viaje" className="viaje">Smart Travel</a>
               
             </header>
 

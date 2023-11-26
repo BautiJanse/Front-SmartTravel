@@ -59,9 +59,11 @@ export const Home = () => {
     <div>
       <section className="second-section" id="section-b">
         <header className="home-header">
+          <NavLink to="/Viaje">
           <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
-          <a href="/" className="viaje">Viaje</a>
-          <a href="/" className="icon"></a>
+          </NavLink>
+          <a className="viaje">Viaje</a>
+          <a className="icon"></a>
         </header>
       </section> 
 
