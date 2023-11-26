@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes } from "react-router-dom"
+import { NavLink, Route, Routes, useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import axios from "axios";
 import '../Styles/home.css';
@@ -7,6 +7,8 @@ export const Home = () => {
   const [destino, setDestino] = useState('')
   const [fecha, setFecha] = useState('')
   const [nombreViaje, setNombreViaje] = useState('')
+
+  const nav = useNavigate()
 
   //sessionStorage.setItem("viajeId", 1)  esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
 
@@ -60,7 +62,7 @@ export const Home = () => {
       <section className="second-section" id="section-b">
         <header className="home-header">
           <NavLink to="/Viaje">
-          <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
+            <a href="/Viaje" className="go-back-home"><i className='bx bx-chevron-left'></i></a>
           </NavLink>
           <a className="viaje">Viaje</a>
           <a className="icon"></a>
@@ -79,52 +81,37 @@ export const Home = () => {
           </div>
 
   
-<div className="container-box">
-<NavLink to="/Destino" >
-  <div className="box">
-  <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
-  <p>Destino</p>
-  </div>
-  </NavLink>
+          <div className="container-box">
+            
+            <div className="box" type="button" onClick={() => nav("/Destino")}>
+              <img src="public/sonar-montanasjpg.webp" alt="Imagen" />
+              <p>Destinos</p>
+            </div>
+            
+            <div className="box" type="button" onClick={() => nav("/Documentos")}>
+              <img src="public/project-documents.jpg" alt="Imagen" />
+              <p>Documentos</p>
+            </div>
 
-  <NavLink to="/Documentos" >
-  
-  <div className="box">
-  <img src="public/project-documents.jpg" alt="Imagen" />
-  <p>Documentos</p>
-  </div>
-  </NavLink>
+            <div className="box" type="button" onClick={() => nav("/Actividades")}>
+              <img src="public/descarga (1).jpeg" alt="Imagen" />
+              <p>Actividades</p>
+            </div>
+          
+          </div>
 
-  <NavLink to="/Actividades" >
-  <div className="box">
-  <img src="public/descarga (1).jpeg" alt="Imagen" />
-  <p>Actividades</p>
-  </div>
-  </NavLink>
-
-    
-
-  </div>
-
-  <NavLink to="/Miembros">
-  <div className="usuarios">
-      <p>Miembros</p>
+          <NavLink to="/Miembros">
+            <div className="usuarios">
+                <p>Miembros</p>
+            </div>
+          </NavLink>
+          <NavLink to="/Gastos">
+            <div className="gastos">
+              <p>Gastos</p>
+            </div>
+          </NavLink>
+        </div>
+      </section>
     </div>
-    </NavLink>
-    <NavLink to="/Gastos">
-    <div className="gastos">
-      <p>Gastos</p>
-    </div>
-    </NavLink>
-
-
-  </div>
-
-</section>
-
-
-    </div>
-
-
   )
 }
