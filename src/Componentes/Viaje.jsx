@@ -35,12 +35,21 @@ export const Viaje = () => {
         }
     }
 
+    const handleLogout = () => {
+        sessionStorage.removeItem("viajeId");
+        sessionStorage.removeItem("usuarioId");
+        nav("/Login");
+    }
+
     return (
 
         <div>
           
             <header className="viaje-header">
               <a href="/" className="viaje">Smart Travel</a>
+              <button className="logout-button" onClick={handleLogout}>
+                    <i className='bx bx-log-out'></i>
+                </button>
             </header>
 
             <div className="container-content">

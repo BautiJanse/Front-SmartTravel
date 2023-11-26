@@ -101,7 +101,16 @@
 } */
 
 
-
+.logout-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 11px;
+    right: 370px;
+}
 
 
 .gastos-home{
