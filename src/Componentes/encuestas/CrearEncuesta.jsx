@@ -31,8 +31,8 @@ export const CrearEncuesta = () => {
       <Link to="/Miembros/Encuestas">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="encuestas">Encuestas</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="encuestas">Encuestas</a>
+      <a href="/Home" className="icon"></a>
       </header>
 
       <section className="lista-documentos" id="section-a">    

@@ -44,8 +44,8 @@ export const AgregarMiembro = () => {
         <Link to="/Miembros">
             <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
         </Link>
-        <a href="/" className="miembros">Miembros</a>
-        <a href="/" className="icon"></a>
+        <a href="/Home" className="miembros">Miembros</a>
+        <a href="/Home" className="icon"></a>
       </header>
 
       <section className="lista-miembros2" id="section-a">
