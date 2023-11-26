@@ -39,7 +39,7 @@ export const Miembros = () => {
           <i className='bx bx-chevron-left'></i>
         </Link>
         <Link to="/Miembros" className="miembros">
-          Destinos
+          Miembros
         </Link>
       </header>
 

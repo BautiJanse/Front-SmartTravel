@@ -16,7 +16,16 @@
 }
 
 .header-miembros .miembros{
-  margin-right: 20px; 
+  margin-right: 35%; 
+}
+
+.tablaMiembros td{
+  text-align: center;
+}
+
+.tablaMiembros{
+  width: 100%;
+  margin-top: 16px;
 }
 
 .header-miembros a{
@@ -61,11 +70,11 @@
 }
 
 .miembros-miembros h2{
-    margin-top:51px;
-    margin-bottom: 26px;
-    margin-left:46px;
-    font-size: 20px;
-    font-weight: bold;
+  margin-top:51px;
+  margin-bottom: 26px;
+  margin-left:46px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .add-miembro{
