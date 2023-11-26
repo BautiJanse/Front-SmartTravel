@@ -1,3 +1,30 @@
+.header-actividades{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+  
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding:25px 15px;
+    font-weight: bold;
+}
+
+.header-actividades .miembros{
+    margin-right: 5%;  
+}
+
+
+.header-actividades a{
+    text-decoration: none;
+    color:black;
+    font-size:27px;
+    font-family: lora;
+}
+
 .tablaActividades{
     width: 100%;
     margin-top: 116px;
