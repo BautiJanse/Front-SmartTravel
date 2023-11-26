@@ -141,8 +141,8 @@
 
     padding:15px 15px;
     font-weight:bold;
-    background-color: rgba(255, 255, 255, 0.459);
-  
+   //background-color: rgba(255, 255, 255, 0.459);
+    background-color: white;
 }
 
 .home-header a{
@@ -459,7 +459,14 @@
 
 
 .viaje{
-    margin-right: 50px; 
+    margin-right: 40px; 
+    font-size:24px;
+    
+}
+
+
+.viaje2{
+    margin-right: 60px; 
     font-size:24px;
     
 }

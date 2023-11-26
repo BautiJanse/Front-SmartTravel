@@ -46,7 +46,7 @@ export const Viaje = () => {
         <div>
           
             <header className="viaje-header">
-              <a href="/Viaje" className="viaje">Smart Travel</a>
+              <a href="/Viaje" className="viaje2">SmartTravel</a>
               <button className="logout-button" onClick={handleLogout}>
                     <i className='bx bx-log-out'></i>
                 </button>
