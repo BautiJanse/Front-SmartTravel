@@ -50,10 +50,10 @@ export const AgregarActividad = () => {
 
 <header className="header-actividades">
       <Link to="/Actividades">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+        <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="miembros">Actividades</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="miembros">Actividades</a>
+      <a href="/Home" className="icon"></a>
     </header>
 
     <section className="lista-documentos" id="section-a">

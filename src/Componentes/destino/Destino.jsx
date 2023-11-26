@@ -44,10 +44,10 @@ export const Destino = () => {
     <div>
       <header className="header-documentos">
       <Link to="/Destino">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+        <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="documentos">Destinos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="documentos">Destinos</a>
+      <a href="/Home" className="icon"></a>
     </header>
 
       <section className="lista-miembros2" id="section-a">

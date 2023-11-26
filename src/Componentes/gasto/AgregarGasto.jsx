@@ -60,8 +60,8 @@ const handleSubmit = async (e) => {
       <Link to="/Gastos">
       <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="miembros">Gastos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="miembros">Gastos</a>
+      <a href="/Home" className="icon"></a>
     </header>
         
     <div className="container-docs">

@@ -40,10 +40,10 @@ const Destinos2 = () => {
     <div>
       <header className="header-documentos">
       <Link to="/Home">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+        <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
-      <a href="/" className="documentos">Destinos</a>
-      <a href="/" className="icon"></a>
+      <a href="/Home" className="documentos">Destinos</a>
+      <a href="/Home" className="icon"></a>
     </header>
 
     <div className='container-destination'>

@@ -10,8 +10,6 @@ export const Home = () => {
 
   const nav = useNavigate()
 
-  //sessionStorage.setItem("viajeId", 1)  esto guarda en el web browser el id de viaje que estamos usando, se tendria que poder cambiar cuando elegimos los viajes
-
   useEffect(() => {
     getNombreViaje();
     getDestinoFinal();
