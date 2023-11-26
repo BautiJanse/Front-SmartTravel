@@ -35,21 +35,38 @@ export const Miembros = () => {
   return (
     <div>
       <header className="header-miembros">
-        <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
-        <a href="/Home" className="miembros">Miembros</a>
-        <a href="/Home" className="icon"></a>
+        <Link to="/Home" className="go-back">
+          <i className='bx bx-chevron-left'></i>
+        </Link>
+        <Link to="/Miembros" className="miembros">
+          Destinos
+        </Link>
       </header>
 
       <section className="lista-miembros" id="section-a">
         <h1 className="title-miembros">Lista de miembros</h1>
-        {miembros.map((miembro) => (
-          <div className="container-miembros" key={miembro.miembroId}>
-            <p className="user-icon-miembros"><i className='bx bx-user-circle'></i></p>
-            <p className="member-miembros">{miembro.nombre}</p>
-            <p className="member-balance">{miembro.balance}$</p>
-            <button className="eliminar-miembro" onClick={() => handleEliminarMiembro(miembro.miembroId)}>Eliminar</button>
-          </div>
-        ))}
+        <table className="tablaMiembros">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Balance</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {miembros.map((miembro) => (
+              <tr key={miembro.miembroId}>
+                <td>{miembro.nombre}</td>
+                <td>{miembro.balance}$</td>
+                <td>
+                  <button className="eliminar-miembro" onClick={() => handleEliminarMiembro(miembro.miembroId)}>
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <Link to="/AgregarMiembro" className="link-miembros">
           <div className="add-miembro">
@@ -60,7 +77,6 @@ export const Miembros = () => {
         <Link to="/Miembros/Encuestas">
           <button className="add-miembro">Ver Encuestas</button>
         </Link>
-
       </section>
     </div>
   );
