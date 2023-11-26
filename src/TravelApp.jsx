@@ -11,9 +11,11 @@ import { AgregarGasto } from "./Componentes/gasto/AgregarGasto"
 import { AgregarDocumentos } from "./Componentes/documento/AgregarDocumentos"
 import { CrearEncuesta } from "./Componentes/encuestas/CrearEncuesta"
 import { Viaje } from "./Componentes/Viaje"
+import { AgregarViaje } from "./Componentes/AgregarViaje"
 import { VerEncuestas } from "./Componentes/encuestas/VerEncuestas"
 import Login from "./Componentes/Log/Login"
 import App from "./Componentes/Log/PreHome"
+
 
 
 export const TravelApp = () => {
@@ -38,6 +40,7 @@ export const TravelApp = () => {
         <Route path="/Miembros/Encuestas" element={<VerEncuestas></VerEncuestas>}></Route>
         <Route path="/*" element={<App></App>}> </Route>
         <Route path="/Viaje" element={<Viaje></Viaje>}></Route>
+        <Route path="/AgregarViaje" element={<AgregarViaje></AgregarViaje>}></Route>
       </Routes>
     </div>
 

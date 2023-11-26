@@ -27,7 +27,7 @@ export const Viaje = () => {
   
 
   <div className="agregar-viaje">
-      <p>Agregar Viaje</p>
+      <p className="letra-viaje">Agregar Viaje </p>
     </div>
           
 
