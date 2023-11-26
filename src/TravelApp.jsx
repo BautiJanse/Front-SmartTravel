@@ -44,6 +44,7 @@ export const TravelApp = () => {
         
         <Route path="/Viaje" element={<Viaje></Viaje>}></Route>
         <Route path="/AgregarViaje" element={<AgregarViaje></AgregarViaje>}></Route>
+        
         <Route path="/Destino" element={<Destino2></Destino2>}></Route>
       </Routes>
     </div>
