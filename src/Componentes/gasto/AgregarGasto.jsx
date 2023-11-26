@@ -75,6 +75,7 @@ const handleSubmit = async (e) => {
             
 
             <select className="select-miembro" name="miembro" placeholder="elegir.." value={miembro} onChange={(e) => setMiembro(e.target.value)}>
+                <option value={''}></option>
                 {usuarios.map((usuario) => (
                   <option key={usuario.miembroId} value={usuario.miembroId}>
                     {usuario.nombre}
