@@ -40,7 +40,7 @@ export const Actividades = () => {
 
   return (
     <div>
-      <header className="header-miembros">
+      <header className="header-actividades">
       <a href="/Home" className="go-back"><i className='bx bx-chevron-left'></i></a>
       <a href="/Home" className="miembros">Actividades</a>
       <a href="/Home" className="icon"></a>
