@@ -7,6 +7,7 @@ export const Home = () => {
   const [destino, setDestino] = useState('')
   const [fecha, setFecha] = useState('')
   const [nombreViaje, setNombreViaje] = useState('')
+  const [url, setUrl] = useState();
 
   const nav = useNavigate()
 
@@ -39,6 +40,7 @@ export const Home = () => {
     try {
       const response = await axios.get(`http://localhost:8080/viaje/${sessionStorage.getItem("viajeId")}`)
       setNombreViaje(response.data.nombreViaje)
+      getUrlFoto(response.data.nombreViaje)
     } catch (error) {
       console.error('Error al obtener Viaje:', error);
     }
@@ -54,6 +56,16 @@ export const Home = () => {
       return date.toLocaleDateString();
   }
 
+  const getUrlFoto = async (nombreViaje) => {
+    try {   
+        const response = await axios.get(`https://api.unsplash.com/search/photos/?client_id=MF1mlcyitmooD3KORl1zF4Iq08nU7m5ZgREzYyK_beQ&query=${nombreViaje}`)
+        setUrl(response.data.results[0].urls.raw)
+    } catch (error) {
+        console.log("ERROR AL BUSCAR LA IMG", error)
+        setUrl("public/sonar-montanasjpg.webp")
+    }
+  }
+
   return (
 
     <div>
@@ -65,6 +77,7 @@ export const Home = () => {
           <a className="viaje">SmartTravel</a>
           <a className="icon"></a>
         </header>
+        <img src={url ? url : null} alt="Imagen"/>
       </section> 
 
 

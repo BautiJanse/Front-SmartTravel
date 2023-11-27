@@ -454,7 +454,11 @@
     
 }
 
-
+.second-section img{
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 
