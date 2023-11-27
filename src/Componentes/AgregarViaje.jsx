@@ -35,7 +35,7 @@ export const AgregarViaje = () => {
                         <p className="p-style2">Nombre del Viaje</p>
                         <input type="text" id="nombre" name="nombre" placeholder=""  value={nombre} onChange={(e) => setNombre(e.target.value)} required></input>
                         
-                        <button type='submit' className='add-actividad'>Agregar Actividad</button>
+                        <button type='submit' className='add-actividad'>Crear viaje</button>
                     </form>
                 </div>
             </section>
