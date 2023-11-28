@@ -59,11 +59,15 @@ export const Home = () => {
   const getUrlFoto = async (nombreViaje) => {
     try {   
         const response = await axios.get(`https://api.unsplash.com/search/photos/?client_id=MF1mlcyitmooD3KORl1zF4Iq08nU7m5ZgREzYyK_beQ&query=${nombreViaje}`)
-        setUrl(response.data.results[0].urls.raw)
+        setUrl(response.data.results[0].urls.small_s3)
     } catch (error) {
         console.log("ERROR AL BUSCAR LA IMG", error)
-        setUrl("public/sonar-montanasjpg.webp")
+        setUrl("/public/photo4jpg.jpg")
     }
+  }
+
+  const handleCambiarViaje = () => {
+      nav("/ActualizarViaje")
   }
 
   return (
@@ -77,7 +81,9 @@ export const Home = () => {
           <a className="viaje">SmartTravel</a>
           <a className="icon"></a>
         </header>
-        <img src={url ? url : null} alt="Imagen"/>
+        <div type="button" onClick={handleCambiarViaje}>
+          <img src={url ? url : null} alt="Imagen"/>
+        </div>
       </section> 
 
 
