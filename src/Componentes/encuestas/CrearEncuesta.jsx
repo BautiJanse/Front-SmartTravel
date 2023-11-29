@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import FadeLoader from "react-spinners/FadeLoader";
 import axios from 'axios';
 
 export const CrearEncuesta = () => {
   const [pregunta, setPregunta] = useState('');
   const [respuestas, setRespuestas] = useState(['', '']);
+  let [loading, setLoading] = useState(false);
 
   const handleRespuestaChange = (index, value) => {
     const nuevasRespuestas = [...respuestas];
@@ -16,9 +18,11 @@ export const CrearEncuesta = () => {
     setRespuestas([...respuestas, '']);
   };
 
-  const crearEncuesta = async () => {
+  const crearEncuesta = async () => {    
+    setLoading(true);
     const response = await axios.post(`http://localhost:8080/encuestas/hacerEncuestaPy/${sessionStorage.getItem("viajeId")}/?pregunta=${pregunta}&posiblesRespuestas=${respuestas.join(',')}`)
     const url = response.data.url
+    setLoading(false)
     window.alert(url)
   };
 
@@ -34,7 +38,8 @@ export const CrearEncuesta = () => {
       <a href="/Home" className="encuestas">Encuestas</a>
       <a href="/Home" className="icon"></a>
       </header>
-
+      {loading && <div className='loader'><FadeLoader color="#D0CBFF" /></div>}
+      {!loading &&
       <section className="lista-documentos" id="section-a">    
 
         <div className="container-docs">
@@ -64,7 +69,7 @@ export const CrearEncuesta = () => {
         </div>
         
         <button onClick={crearEncuesta} className='add-miembro'>Crear Encuesta</button>
-      </section>
+      </section>}
     </div>
   );
 };
