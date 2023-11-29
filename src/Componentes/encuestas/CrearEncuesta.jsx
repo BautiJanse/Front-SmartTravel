@@ -29,7 +29,7 @@ export const CrearEncuesta = () => {
 
       <header className="header-encuestas">
       <Link to="/Miembros/Encuestas">
-      <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
+        <a href="/" className="go-back"><i className='bx bx-chevron-left'></i></a>
       </Link>
       <a href="/Home" className="encuestas">Encuestas</a>
       <a href="/Home" className="icon"></a>
@@ -37,36 +37,33 @@ export const CrearEncuesta = () => {
 
       <section className="lista-documentos" id="section-a">    
 
-      
-      <div className="container-docs">
-      <div className="container-label">
-        <label>Pregunta:</label>
-        <input
-          type="text"
-          value={pregunta}
-          onChange={(e) => setPregunta(e.target.value)}
-        />
-      </div>
-      <div className='container-label'>
-      <div>
-        <label>Respuestas:</label>
-        {respuestas.map((respuesta, index) => (
-          <div key={index}>
+        <div className="container-docs">
+          <div className="container-label">
+            <label>Pregunta:</label>
             <input
               type="text"
-              value={respuesta}
-              onChange={(e) => handleRespuestaChange(index, e.target.value)}
+              value={pregunta}
+              onChange={(e) => setPregunta(e.target.value)}
             />
           </div>
-        ))}
-        <button onClick={agregarRespuesta} className='add-respuesta'>Agregar Respuesta</button>
+          <div className='container-label'>
+            <div>
+              <label>Respuestas:</label>
+              {respuestas.map((respuesta, index) => (
+                <div key={index}>
+                <input
+                    type="text"
+                    value={respuesta}
+                    onChange={(e) => handleRespuestaChange(index, e.target.value)}
+                  />
+                </div>
+              ))}
+              <button onClick={agregarRespuesta} className='add-respuesta'>Agregar Respuesta</button>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
-      
-      <button onClick={crearEncuesta} className='add-miembro'>Crear Encuesta</button>
-      
-      
+        
+        <button onClick={crearEncuesta} className='add-miembro'>Crear Encuesta</button>
       </section>
     </div>
   );
