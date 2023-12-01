@@ -25,7 +25,7 @@ export const AgregarViaje = () => {
           
             <header className="viaje-header2">
               <NavLink to="/Viaje">
-                <a href="/" className="viaje">Smart Travel</a>
+                <a href="/" className="viaje3">SmartTravel</a>
               </NavLink>
             </header>
 

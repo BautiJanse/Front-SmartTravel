@@ -98,13 +98,13 @@ export const Documentos = () => {
 
         <div className="navbar">
           <div className="container-miembros">
-            <ListaDesplegable tipo="Transporte" documentos={documentosGuardados} />
+            <ListaDesplegable tipo="Transporte" className="lista-doc" documentos={documentosGuardados} />
           </div>
           <div className="container-miembros">
-            <ListaDesplegable tipo="Alojamiento" documentos={documentosGuardados} />
+            <ListaDesplegable tipo="Alojamiento" className="lista-doc" documentos={documentosGuardados} />
           </div>
           <div className="container-miembros">
-            <ListaDesplegable tipo="Otros" documentos={documentosGuardados} />
+            <ListaDesplegable tipo="Otros" className="lista-doc" documentos={documentosGuardados} />
           </div>
         </div>
 
