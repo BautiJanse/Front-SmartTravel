@@ -20,10 +20,15 @@ export const CrearEncuesta = () => {
 
   const crearEncuesta = async () => {    
     setLoading(true);
-    const response = await axios.post(`http://localhost:8080/encuestas/hacerEncuestaPy/${sessionStorage.getItem("viajeId")}/?pregunta=${pregunta}&posiblesRespuestas=${respuestas.join(',')}`)
-    const url = response.data.url
-    setLoading(false)
-    window.alert(url)
+    try {
+      const response = await axios.post(`http://localhost:8080/encuestas/hacerEncuestaPy/${sessionStorage.getItem("viajeId")}/?pregunta=${pregunta}&posiblesRespuestas=${respuestas.join(',')}`)
+      const url = response.data.url
+      setLoading(false)
+      window.alert(url)
+    } catch (error) {
+      setLoading(false)
+      window.alert("ERROR NO ESTA PRENDIDA LA API ")
+    }
   };
 
   return (
