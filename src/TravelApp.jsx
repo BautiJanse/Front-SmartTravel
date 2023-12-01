@@ -10,12 +10,13 @@ import { AgregarActividad } from "./Componentes/actividad/AgregarActividad"
 import { AgregarGasto } from "./Componentes/gasto/AgregarGasto"
 import { AgregarDocumentos } from "./Componentes/documento/AgregarDocumentos"
 import { CrearEncuesta } from "./Componentes/encuestas/CrearEncuesta"
-import { Viaje } from "./Componentes/Viaje"
-import { AgregarViaje } from "./Componentes/AgregarViaje"
+import { Viaje } from "./Componentes/viaje/Viaje"
+import { AgregarViaje } from "./Componentes/viaje/AgregarViaje"
 import { VerEncuestas } from "./Componentes/encuestas/VerEncuestas"
 import Login from "./Componentes/Log/Login"
 import App from "./Componentes/Log/PreHome"
 import Destino2 from "./Componentes/destino/Destino2"
+import { ActualizarViaje } from "./Componentes/viaje/ActualizarViaje"
 
 
 
@@ -44,7 +45,8 @@ export const TravelApp = () => {
         
         <Route path="/Viaje" element={<Viaje></Viaje>}></Route>
         <Route path="/AgregarViaje" element={<AgregarViaje></AgregarViaje>}></Route>
-        
+        <Route path="/ActualizarViaje" element={<ActualizarViaje></ActualizarViaje>}></Route>
+
         <Route path="/Destino" element={<Destino2></Destino2>}></Route>
       </Routes>
     </div>

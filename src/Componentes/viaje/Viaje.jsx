@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import axios from "axios";
-import '../Styles/home.css';
+import '../../Styles/home.css';
 
 export const Viaje = () => {
     const [viajes, setViaje] = useState([])

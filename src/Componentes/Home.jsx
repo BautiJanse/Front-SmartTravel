@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
+import FadeLoader from "react-spinners/FadeLoader";
 import axios from "axios";
 import '../Styles/home.css';
 
@@ -7,6 +8,8 @@ export const Home = () => {
   const [destino, setDestino] = useState('')
   const [fecha, setFecha] = useState('')
   const [nombreViaje, setNombreViaje] = useState('')
+  const [url, setUrl] = useState();
+  let [loading, setLoading] = useState(true);
 
   const nav = useNavigate()
 
@@ -39,6 +42,7 @@ export const Home = () => {
     try {
       const response = await axios.get(`http://localhost:8080/viaje/${sessionStorage.getItem("viajeId")}`)
       setNombreViaje(response.data.nombreViaje)
+      getUrlFoto(response.data.nombreViaje)
     } catch (error) {
       console.error('Error al obtener Viaje:', error);
     }
@@ -54,6 +58,23 @@ export const Home = () => {
       return date.toLocaleDateString();
   }
 
+  const getUrlFoto = async (nombreViaje) => {
+    setLoading(true)
+    try {   
+        const response = await axios.get(`https://api.unsplash.com/search/photos/?client_id=MF1mlcyitmooD3KORl1zF4Iq08nU7m5ZgREzYyK_beQ&query=${nombreViaje}`)
+        setUrl(response.data.results[0].urls.small_s3)
+        setLoading(false)
+    } catch (error) {
+        console.log("ERROR AL BUSCAR LA IMG", error)
+        setUrl("/public/photo4jpg.jpg")
+        setLoading(false)
+    }
+  }
+
+  const handleCambiarViaje = () => {
+      nav("/ActualizarViaje")
+  }
+
   return (
 
     <div>
@@ -65,6 +86,10 @@ export const Home = () => {
           <a className="viaje">SmartTravel</a>
           <a className="icon"></a>
         </header>
+        <div type="button" onClick={handleCambiarViaje}>
+          {loading && <div className='loader-home'><FadeLoader color="#D0CBFF" /></div>}
+          {!loading && <img src={url} alt="Imagen"/>}
+        </div>
       </section> 
 
 

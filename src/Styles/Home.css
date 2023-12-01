@@ -436,7 +436,7 @@
 
 .second-section {
     
-    background-image: url(../../public/photo4jpg.jpg);
+    background-color: #666666;
     height: 321px;
     /* Otra propiedad relacionada con el fondo si es necesario */
     background-size:cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
@@ -454,7 +454,11 @@
     
 }
 
-
+.second-section img{
+    height: 255px;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 
@@ -462,6 +466,11 @@
     margin-right: 40px; 
     font-size:24px;
     
+}
+
+.viaje3{
+    margin-right: 60px;
+    font-size:24px;
 }
 
 
@@ -498,4 +507,9 @@
 
 .tableViaje{
     width: 100%;
+}
+
+.loader-home {
+    margin-top: 103px;
+    margin-left: 180px;
 }

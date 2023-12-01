@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import axios from "axios";
-import '../Styles/home.css';
+import '../../Styles/home.css';
 
 export const AgregarViaje = () => {
     const [nombre, setNombre] = useState('')
@@ -25,7 +25,7 @@ export const AgregarViaje = () => {
           
             <header className="viaje-header2">
               <NavLink to="/Viaje">
-                <a href="/" className="viaje">Smart Travel</a>
+                <a href="/" className="viaje3">SmartTravel</a>
               </NavLink>
             </header>
 
