@@ -19,14 +19,14 @@
 }
 
 .header-actividades .miembros{
-    margin-right: 5%;  
+    margin-right: 10%;  
 }
 
 
 .header-actividades a{
     text-decoration: none;
     color:black;
-    font-size:27px;
+    font-size:24px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     
@@ -97,3 +97,20 @@
     font-family: 'Inter', sans-serif;
     font-weight: 700;
 }
+ 
+  .tablaActividades th, .tablaActividades td {
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
+    
+  }
+  
+.tablaActividades{
+    margin-top:110px;
+
+}
+
+  .tablaActividades th {
+    background-color: #D0CBFF;
+  }
+  
+ 

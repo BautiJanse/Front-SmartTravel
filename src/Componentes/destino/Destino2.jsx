@@ -49,7 +49,7 @@ const Destinos2 = () => {
     <div className='container-destination'>
 
       <div className="fila">
-        <table className="tablaDestinos">
+        <table className="tablaActividades">
           <thead>
             <tr>
               <th>Ciudad Destino</th>
