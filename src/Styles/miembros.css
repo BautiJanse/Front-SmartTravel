@@ -83,6 +83,13 @@
   margin-top: 16px;
 }
 
+.tablaMiembros td{
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
 .header-miembros a{
     text-decoration: none;
     color:black;
