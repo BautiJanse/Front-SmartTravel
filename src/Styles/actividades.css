@@ -39,6 +39,10 @@
 
 .tablaActividades td{
     text-align: center;
+    max-width: 159px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
 
 .add-actividad{
