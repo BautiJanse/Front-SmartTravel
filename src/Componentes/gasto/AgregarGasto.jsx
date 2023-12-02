@@ -33,17 +33,18 @@ useEffect(() => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!miembro || !motivo || !importe) {
+      alert('Por favor, completa todos los campos');
+      return;
+    }    
+
     const nuevoGasto = { idComprador:miembro, nombreGasto:motivo, monto:importe, idViaje:sessionStorage.getItem("viajeId") };
     setGastos([...gastos, nuevoGasto]);
     setMiembro('');
     setMotivo('');
     setImporte('');
-  
-    if (!miembro || !motivo || !importe) {
-      alert('Por favor, completa todos los campos');
-      return;
-    }
-  
+    
     try {
       await axios.post('http://localhost:8080/gasto', nuevoGasto);
       console.log('Datos enviados correctamente');
