@@ -21,7 +21,12 @@ export const AgregarActividad = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
+        if (!nombre_actividad || !fecha || !lugar ) {
+          alert('Por favor, completa todos los campos');
+          return;
+        }
+      
         const nuevaActividad = { nombreActividad:nombre_actividad, fecha, lugar, viajeId};
         setActividades([...actividades, nuevaActividad]);
         setNombreAct('');
@@ -30,10 +35,7 @@ export const AgregarActividad = () => {
         
         console.log(nuevaActividad)
 
-        if (!nombre_actividad || !fecha || !lugar ) {
-            alert('Por favor, completa todos los campos');
-            return;
-        }
+        
 
         try {         
             await axios.post('http://localhost:8080/actividad', nuevaActividad);
